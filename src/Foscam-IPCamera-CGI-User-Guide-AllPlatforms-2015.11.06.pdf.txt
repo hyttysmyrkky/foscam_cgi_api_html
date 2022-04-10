@@ -1,0 +1,3463 @@
+2. All Platform CGI
+AV Function
+getImageSetting
+Function Get color attribute of video
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getImageSetting
+Param None
+brightness
+0~100
+contrast
+0~100
+hue
+0~100
+saturation
+0~100
+sharpness
+0~100
+denoiseLevel
+Not use
+Return
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getImageSetting&usr=admin&pwd=
+setBrightness
+Function Set brightness of video
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=setBrightness
+Param brightness
+Return None
+0~100
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=setBrightness&brightness=50&usr=admin&pwd=
+setContrast
+Function Set contrast of video
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=setContrast
+Param constrast
+0~100
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+13Foscam IPCamera CGI User Guide
+Return
+None
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=setContrast&constrast=50&usr=admin&pwd=
+setHue
+Function Set hue of video
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=setHue
+Param hue
+Return None
+0~100
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=setHue&hue=50&usr=admin&pwd=
+setSaturation
+Function Set saturation of video
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=setSaturation
+Param saturation
+Return None
+0~100
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=setSaturation&saturation=50&usr=admin&pwd=
+setSharpness
+Function Set sharpness of video
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=setSharpness
+Param sharpness
+Return None
+0~100
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=setSharpness&sharpness=50&usr=admin&pwd=
+setDenoiseLevel (not use)
+Function
+Set DenoiseLevel of video
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+14Foscam IPCamera CGI User Guide
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=setSharpness
+Param DenoiseLevel
+Return None
+0~100
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=setDenoiseLevel&level=50&usr=admin&pwd=
+resetImageSetting
+Function Reset color parameters to default value
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=resetImageSetting
+Param None
+Return None
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=resetImageSetting&usr=admin&pwd=
+getMirrorAndFlipSetting
+Function Get mirror and flip attribute of video
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getMirrorAndFlipSetting
+Param None
+Return isMirror
+isFlip
+0 Not mirred
+1 Mirred
+0 Not filpped
+1 Flipped
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getMirrorAndFlipSetting&usr=admin&pwd=
+mirrorVideo
+Function Mirror video
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=mirrorVideo
+Param isMirror
+0
+Not mirror
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+15Foscam IPCamera CGI User Guide
+1
+Return
+Mirror
+None
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=mirrorVideo& isMirror=1 &usr=admin&pwd=
+flipVideo
+Function Flip video
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=flipVideo
+Param isFlip
+Return
+0 Not flip
+1 Flip
+None
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=flipVideo& isFlip=1 &usr=admin&pwd=
+getRatio
+Function Get value for image distortion correction
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getRatio
+Param None
+Return ratio
+Three ranks for image distortion correction
+High:150.
+Middle:210.
+Low:430.
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getRatio&usr=admin&pwd=
+setRatio
+Function Set value for image distortion correction
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=setRatio
+Param ratio
+1. 0-511， value for image distortion correction.
+2. Three ranks,
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+16Foscam IPCamera CGI User Guide
+High:0-150.
+Middle:151-429.
+Low:430-511.
+3. Default, Middle.
+Return
+None
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=setRatio& ratio=150 &usr=admin&pwd=
+getH264FrmRefMode
+Function Get frame shipping reference mode of H264 encode stream
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getH264FrmRefMode
+Param None
+Return mode
+0
+1
+Normal reference mode
+Two frames are separated by four skipping
+frames
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getH264FrmRefMode&usr=admin&pwd=
+setH264FrmRefMode
+Function Set frame shipping reference mode of H264 encode stream
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=setH264FrmRefMode
+Param mode
+0
+1
+Normal reference mode
+Two frames are separated by four skipping
+frames
+Return
+None
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=setH264FrmRefMode& mode=0 &usr=admin&pwd=
+getScheduleRecordStreamChn
+Function Get stream channel for schedule record
+privilege admin
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+17Foscam IPCamera CGI User Guide
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getScheduleRecordStreamChn
+Param None
+Return chn
+0 main stream
+1 sub stream
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getScheduleRecordStreamChn&usr=admin&pwd=
+setScheduleRecordStreamChn
+Function Set stream channel for schedule record
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=setScheduleRecordStreamChn
+Param chn
+0 main stream
+1 sub stream
+Return
+None
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=setScheduleRecordStreamChn& chn=0 &usr=admin
+&pwd=
+setPwrFreq
+Function Set power freq of sensor
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=setPwrFreq
+Param freq
+Return
+0 60HZ
+1 50HZ
+2 outdoor mode
+None
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=setPwrFreq&freq=0&usr=admin&pwd=
+getVideoStreamParam
+Function Get video stream param
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getVideoStreamParam
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+18Foscam IPCamera CGI User Guide
+Param None Return resolutionN Resolution of stream type N
+bitRateN Bit rate of stream type N
+frameRateN Frame rate of stream type N
+GOPN P frames between I frame of stream type N
+isVBRN Change
+bit
+(20480~2097152)
+rate
+of
+stream
+1-yes
+0-nosetSubVideoStreamParam
+Note N means streamType [0~3]
+Example /cgi-bin/CGIProxy.fcgi?cmd=getVideoStreamParam&usr=admin&pwd=
+setVideoStreamParam
+Function Set the video stream param of stream N
+privilege admin Usage /cgi-bin/CGIProxy.fcgi?cmd=setVideoStreamParam
+Param streamType 0~3
+resolution Resolution of stream type N
+bitRate Bit rate of stream type N
+frameRate Frame rate of stream type N
+GOP P frames between I frame of stream type N
+(20480~2097152)
+The suggest value is: X * frameRate
+isVBR
+Return
+Change bit rate of stream type 1-Yes 0-No
+None
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=setVideoStreamParam&streamType=0&resolution=
+0&bitRate=2097152&frameRate=30&GOP=30&isVBR=0&usr=admin&pwd=
+getSubVideoStreamParam
+Function Get sub video stream param
+privilege visitor Usage /cgi-bin/CGIProxy.fcgi?cmd=getSubVideoStreamParam
+Param None Return resolutionN Resolution of stream type N
+bitRateN Bit rate of stream type N
+frameRateN Frame rate of stream type N
+GOPN P frames between I frame of stream type N
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+(20480~2097152)
+19Foscam IPCamera CGI User Guide
+isVBRN
+Not in use currentlly
+Note N means streamType [0~3]
+Example /cgi-bin/CGIProxy.fcgi?cmd=getSubVideoStreamParam&usr=admin&pwd=
+setSubVideoStreamParam
+Function Set the sub video stream param of stream N
+privilege admin Usage /cgi-bin/CGIProxy.fcgi?cmd=setSubVideoStreamParam
+Param streamType 0~3
+resolution Resolution of stream type N
+bitRate Bit rate of stream type N
+frameRate Frame rate of stream type N
+GOP P frames between I frame of stream type N
+(20480~2097152)
+The suggest value is: X * frameRate
+isVBR
+Return
+Not in use currentlly
+None
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=setSubVideoStreamParam&streamType=0&resoluti
+on=0&bitRate=2097152&frameRate=30&GOP=30&isVBR=0&usr=admin&pwd=
+getMainVideoStreamType
+Function Get the stream type of main stream
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getMainVideoStreamType
+Param None
+Return streamType
+The stream type
+0~3
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getMainVideoStreamType&usr=admin&pwd=
+getSubVideoStreamType
+Function Get the stream type of sub stream
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getSubVideoStreamType
+Param None
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+20Foscam IPCamera CGI User Guide
+Return
+streamType
+The stream type
+0~3
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getSubVideoStreamType&usr=admin&pwd=
+setMainVideoStreamType
+Function Set the stream type of main stream
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=setMainVideoStreamType
+Param streamType
+Return None
+The stream type
+0~3
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=setMainVideoStreamType&streamType=0&usr=ad
+min&pwd=
+setSubStreamFormat
+Function Set the stream format of sub stream
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=setSubStreamFormat
+Param format
+0 H264
+1 MotionJpeg
+Return None
+Note Our device can only support 2 streams:Main stream for PC access and Sub
+stream for mobile access, but someone need a MJ stream to embed their
+camera into a webpage, in this case, we should set sub stream format to Motion
+Jpeg,
+and
+then
+you
+can
+get
+MJ
+stream
+by
+command:
+/cgi-bin/CGIStream.cgi?cmd=GetMJStream, but when you login as a sub stream
+user, the stream data will be same as main stream.
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=setSubStreamFormat&format=0&usr=admin&pwd=
+GetMJStream
+Function Get motion jpeg stream
+privilege visitor
+Usage /cgi-bin/CGIStream.cgi?cmd=GetMJStream
+Param None
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+21Foscam IPCamera CGI User Guide
+Return Motion jpeg stream data
+Note 1) Motion jpeg stream data is returned from https server by a serverpush mode
+2) MJ stream is VGA resolution @ 15fps
+3) For some version of Firefox browse, the Firefox will crash when use
+“GetMJStream” CGI to get
+mjstream long time. This problem is due to the
+browse has some defects, it can not parse data correctly and directly. In
+order to fix this problem, we should as follows:
+A. Create a .txt empty document, such as “MJ.txt”.
+B.Input the content into you .txt document, as follows:
+<html>
+<body>
+<img
+src="https://xxxxxx.myfoscam.org:443/cgi-bin/CGIStream.cgi?cmd=GetMJStream
+&usr=admin&pwd="/>
+</body>
+</html>
+Note: please change the ip\port\usr\pwd to youself;
+C. Rename your .txt to .html, such as
+“MJ.html”.
+D. Open you r.html by Firefox, and enjoy your MJStream-video;
+Example
+/cgi-bin/CGIStream.cgi?cmd=GetMJStream&usr=admin&pwd=
+getOSDSetting
+Function Get OSD config privilege admin Usage /cgi-bin/CGIProxy.fcgi?cmd=getOSDSetting
+Param None Return isEnableTimeStamp Time stamp will display on screen or not
+isEnableDevName Camera name will display on screen or not
+dispPos
+isEnableOSDMask OSD display position, currently can only be 0
+Is OSD mask effective
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getOSDSetting&usr=admin&pwd=
+setOSDSetting
+Function
+Set OSD config
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+22Foscam IPCamera CGI User Guide
+privilege admin Usage /cgi-bin/CGIProxy.fcgi?cmd=setOSDSetting
+Param isEnableTimeStamp Time stamp will display on screen or not
+isEnableDevName Camera name will display on screen or not
+dispPos OSD display position, currently can only be 0
+Return
+None
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=setOSDSetting&isEnableTimeStamp=1&isEnableD
+evName=1&dispPos=0&isEnableOSDMask=0&usr=admin&pwd=
+getOsdMaskArea
+Function Get OSD mask area info privilege admin Usage /cgi-bin/CGIProxy.fcgi?cmd=getOsdMaskArea
+Param None Return x1_N The top left X position of mask N
+y1_N The top left Y position of mask N
+x2_N The bottom right X position of mask N
+y2_N The bottom right Y position of mask N
+Note Our device can only support 4 mask areas
+Example /cgi-bin/CGIProxy.fcgi?cmd=getOsdMaskArea&usr=admin&pwd=
+setOsdMaskArea
+Function Set OSD mask area info privilege admin Usage /cgi-bin/CGIProxy.fcgi?cmd=setOsdMaskArea
+param x1_N The top left X position of mask N
+y1_N The top left Y position of mask N
+x2_N The bottom right X position of mask N
+y2_N The bottom right Y position of mask N
+Resturn None
+Note Our device can only support 4 mask areas
+Example /cgi-bin/CGIProxy.fcgi?cmd=setOsdMaskArea&x1_0=100&y1_0=100&x2_0=20
+0&y2_0=200&x1_1=0&y1_1=0&x2_1=0&y2_1=0&x1_2=0&y1_2=0&x2_2=0&y
+2_2=0&x1_3=0&y1_3=0&x2_3=0&y2_3=0&usr=admin&pwd=
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+23Foscam IPCamera CGI User Guide
+getOSDMask
+Function Get OSD mask status privilege admin Usage /cgi-bin/CGIProxy.fcgi?cmd=getOSDMask
+Param None Return isEnableTimeStamp Time stamp will display on screen or not
+isEnableDevName Camera name will display on screen or not
+dispPos
+isEnableOSDMask OSD display position, currently can only be 0
+Is OSD mask effective
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getOSDMask&usr=admin&pwd=
+setOSDMask
+Function Set OSD mask status
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=setOSDMask
+Param isEnableOSDMask
+Return None
+0-Disable, 1-Enable
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=setOSDMask& isEnableOSDMask =1&usr=admin&p
+wd=
+getMotionDetectConfig
+Function Get motion detect config privilege admin Usage /cgi-bin/CGIProxy.fcgi?cmd=getMotionDetectConfig Param None Return isEnable Is enable motion detect alarm
+linkage Motion alarm linkage bit0:Ring
+( bit3 | bit2 | bit1 | bit0 ) bit1:Send mail
+bit2:Snap picture
+bit3:Record
+snapInterval The interval time to snap picture again
+sensitivity Motion
+detect
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+0 : Low
+24Foscam IPCamera CGI User Guide
+sensitivity
+1: Normal
+2: High
+3: Lower
+4: Lowest
+triggerInterval
+The time of which motion detect alaram can
+trigger again when a motion detection has
+happened.P.s.The true value of triggerInterval
+time is the value of the cgi get add 5s.
+isMovAlarmEnable Is enable motion alarm detect
+isPirAlarmEnable Is enable Passive Infrared alarm detect
+scheduleN The motion alaram schedule of one week,
+N = 0(Monday) ~6(Sunday)
+For detail, see *1 bellow
+areaN
+The area info of row N
+For detail, see *2 bellow
+Note
+·Video region is divided into 10*10 sub areasideo region is divided into 10*10
+sub areas
+·The min unit of schedule is half an hour, scheduleN value range
+2 N - 1 (N[0-48])
+N
+.areaN value 2 - 1 (N[0-10])
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getMotionDetectConfig&usr=admin&pwd=
+setMotionDetectConfig
+Function Set motion detect config privilege admin Usage /cgi-bin/CGIProxy.fcgi?cmd=setMotionDetectConfig Param isEnable Is enable motion detect alarm
+linkage Motion alarm linkage bit0:Ring
+( bit3 | bit2 | bit1 | bit0 ) bit1:Send mail
+bit2:Snap picture
+bit3:Record
+snapInterval The interval time to snap picture again
+sensitivity Motion
+detect
+sensitivity
+0 : Low
+1: Normal
+2: High
+3: Lower
+4: Lowest
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+25Foscam IPCamera CGI User Guide
+triggerInterval
+The time of which motion detect alaram can
+trigger again when a motion detection has
+happened.P.s.The true value of triggerInterval
+time is the value of the cgi set add 5s.
+isMovAlarmEnable
+isPirAlarmEnable
+scheduleN
+0 Disable
+1 Enable
+0 Disable
+1 Enable
+The motion alaram schedule of one week,
+N = 0(Monday) ~6(Sunday)
+For detail, see *1 bellow
+areaN
+The area info of row N
+For detail, see *2 bellow
+Return None
+Note ·Video region is divided into 10*10 sub areasideo region is divided into 10*10
+sub areas
+·The min unit of schedule is half an hour, scheduleN value range
+2 N - 1 (N[0-48])
+N
+.areaN value 2 - 1 (N[0-10])
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=setMotionDetectConfig&isEnable=1&linkage=16& s
+napInterval=2&sensitivity=1&triggerInterval=5&isMovAlarmEnable=1&isPirAla
+rmEnable=1& schedule0=1023&schedule1=1023&schedule2=1023&schedule3
+=1023&schedule4=1023&schedule5=1023&schedule6=1023&area0=1023&are
+a1=1023&area2=1023&area3=1023&area4=1023&area5=1023&area6=1023&
+area7=1023&area7=1023&area8=1023&area9=1023&usr=admin&pwd=
+*1 schedule bitmap
+0
+1
+2
+3
+4
+5
+6
+7
+Monday
+Tuesday
+…
+Wednesday
+Thursday
+Wednesday
+Tuesday
+Friday
+Saturday
+Sunday
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+2640
+41
+42
+43
+44
+45
+46
+47
+Foscam IPCamera CGI User Guide
+Each grid of a row presents half of an
+hour of
+one day. For example, 40 presents
+20:00
+~20:30.
+The bit 40 set to “1” means the motion detection is effective between 20:00 to 20:30
+*2 area bitmap
+bit0
+bit1
+bit2
+bit3
+bit4
+bit5
+bit6
+bit7
+bit8
+bit9
+area0
+area1
+area2
+area3
+area4
+area5
+area6
+area7
+area8
+area9
+The video region is divided into 10*10 sub areas, bit0 above present the first area, when
+this bit is set to “1”, it means motion detection is effective on this area.
+setLocalAlarmRecordConfig
+Function Set local alarm-record config
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=setLocalAlarmRecordConfig
+Param isEnableLocalAlar
+mRecord
+0
+Disable
+1
+Enable
+localAlarmRecordS
+ecs
+Recording time
+Return
+None
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=setLocalAlarmRecordConfig& isEnableLocalAlarmR
+ecord=1&localAlarmRecordSecs=30&usr=admin&pwd=
+getLocalAlarmRecordConfig
+Function Get local alarm-record config
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getLocalAlarmRecordConfig
+Param None
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+27Foscam IPCamera CGI User Guide
+Return
+isEnableLocalAlar
+mRecord 0 Disable
+1 Enable
+localAlarmRecordS
+ecs Recording time
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getLocalAlarmRecordConfig&usr=admin&pwd=
+getSnapConfig
+Function Get snap config
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getSnapConfig
+Param None
+Return snapPicQuality
+saveLocation
+0 Low quality
+1 Normal quality
+2 High quality
+0 Save to sd card
+1 Not in use now
+2 Upload to FTP
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getSnapConfig&usr=admin&pwd=
+setSnapConfig
+Function Set snap config
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=setSnapConfig
+Param snapQuality
+saveLocation
+Return
+0 Low quality
+1 Normal quality
+2 High quality
+0 Save to sd card
+1 Not in use now
+2 Upload to FTP
+None
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=setSnapConfig& snapQuality=1&saveLocation=2 &
+usr=admin&pwd=
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+28Foscam IPCamera CGI User Guide
+getScheduleSnapConfig
+Function Get schedule snap config privilege admin Usage /cgi-bin/CGIProxy.fcgi?cmd=getScheduleSnapConfig
+Param None Return isEnable Is enable motion detect alarm
+snapInterval The interval time to snap picture again
+scheduleN The motion alaram schedule of one week,
+N = 0(Monday) ~6(Sunday)
+For detail, see *1 bellow
+Note
+·The min unit of schedule is half an hour, scheduleN value range
+2 N - 1 (N[0-48])
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getScheduleSnapConfig&usr=admin&pwd=
+setScheduleSnapConfig
+Function Set schedule snap config privilege admin Usage /cgi-bin/CGIProxy.fcgi?cmd=setScheduleSnapConfig
+Param isEnable Is enable snap
+snapInterval The interval time to snap picture again
+scheduleN The motion alaram schedule of one week,
+N = 0(Monday) ~6(Sunday)
+For detail, see *1 bellow
+Return None
+Note ·The min unit of schedule is half an hour, scheduleN value range
+2 N - 1 (N[0-48])
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=setScheduleSnapConfig&isEnable=1& snapInterva
+l=2&schedule0=1023&schedule1=1023&schedule2=1023&schedule3=1023&sc
+hedule4=1023&schedule5=1023&schedule6=1023&usr=admin&pwd=
+*1 schedule bitmap
+0
+1
+2
+3
+4
+5
+6
+7
+Monday
+Tuesday
+…
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+Wednesday
+Thursday
+2940
+41
+42
+43
+44
+45
+46
+47
+Foscam IPCamera CGI User Guide
+Wednesday
+Tuesday
+Friday
+Saturday
+Sunday
+Each grid of a row presents half of an hour of one day. For example, 40 presents 20:00
+~20:30.
+The bit 40 set to “1” means the snap is effective between 20:00 to 20:30
+snapPicture
+Function Manual snap picture
+privilege visitor
+Usage /cgi-bin/CGIProxy.fcgi?cmd=snapPicture
+Param None
+Return We will return a html script directly:
+<html><body><img src="../snapPic/20121121-215939.jpg"/></body></html>
+Note Picture resolution is the same as main stream resolutionnapPicture
+Example /cgi-bin/CGIProxy.fcgi?cmd=snapPicture&usr=admin&pwd=
+snapPicture2
+Function Manual snap picture
+privilege visitor
+Usage /cgi-bin/CGIProxy.fcgi?cmd=snapPicture2
+Param None
+Return Jpeg image data
+Note This command will return jpeg image data directly
+Example /cgi-bin/CGIProxy.fcgi?cmd=snapPicture2&usr=admin&pwd=
+getRecordList
+Function Get record list privilege admin Usage /cgi-bin/CGIProxy.fcgi?cmd=getRecordList
+Param recordPath Record path
+startTime Start time for research
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+30Foscam IPCamera CGI User Guide
+Return
+endTime End time for research
+recordType Recort type
+startNo Start no
+totalCnt Total record count
+curCnt Current record count
+recordN N(0-9), Record information
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getRecordList&usr=admin&pwd=
+getRecordList2
+Function Get record list privilege admin Usage /cgi-bin/CGIProxy.fcgi?cmd=getRecordList2
+Param recordPath Record path
+startTime Start time for research
+endTime End time for research
+recordType Recort type
+startNo Start no
+totalCnt Total record count
+curCnt Current record count
+recordN N(0-9), Record information
+Return
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getRecordList2&usr=admin&pwd=
+reloadRecordindex
+Function Synchronization of record index for Play
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=reloadRecordindex
+Param None
+Return None
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=reloadRecordindex&usr=admin&pwd=
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+31Foscam IPCamera CGI User Guide
+getAlarmRecordConfig
+Function Get alarm record config
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getAlarmRecordConfig
+Param None
+Return isEnablePreRecord
+Preview record state
+preRecordSecs
+Preview record time
+alarmRecordSecs
+Alarm record time
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getAlarmRecordConfig&usr=admin&pwd=
+setAlarmRecordConfig
+Function Set alarm record config
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=setAlarmRecordConfig
+Param isEnablePreRecord
+Preview record state
+preRecordSecs
+Preview record time
+alarmRecordSecs
+Alarm record time
+Return
+Set result(0-success,-1-error)
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=setAlarmRecordConfig&usr=admin&pwd=& isEnabl
+ePreRecord=1&preRecordSecs=5&alarmRecordSecs=30
+getRecordPath
+Function Get record path for storage
+privilege admin Usage /cgi-bin/CGIProxy.fcgi?cmd=getRecordPath
+Param None Return path 0-SD card，2-FTP server
+free The free capacity of storage device
+total The total capacity of storage device
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getRecordPath&usr=admin&pwd=
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+32Foscam IPCamera CGI User Guide
+setRecordPath
+Function Set record path for storage privilege admin Usage /cgi-bin/CGIProxy.fcgi?cmd=setRecordPath Param path 0-SD card，2-FTP server 3-SD card and cloud
+Return setResult 0 success
+-1 Sd card is not exist
+-2 Share direction is not set
+-3 Not enough space
+-4 Param error
+-5 Param recording
+free The free capacity of storage device
+total The total capacity of storage device
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=setRecordPath&usr=admin&pwd=&path=2
+getScheduleRecordConfig
+Function Get config for schedule recording
+privilege admin Usage /cgi-bin/CGIProxy.fcgi?cmd=getScheduleRecordConfig
+Param None Return isEnable Schedule-Record enable status, 0-disable,1-enable
+recordLevel Level for drop frame,0-30/30,1-24/30,2-15/30,3-8/30,
+4-4/30,5-1/30;
+spaceFullMode
+The process method when SD card is full,0-cover the
+oldest video and continue record,1-stop record
+isEnableAudio Is recording include audio? 0-no,1-yes
+scheduleN The motion alaram schedule of one week,
+N = 0(Monday) ~6(Sunday)
+For detail, see *1 bellow
+Note
+·The min unit of schedule is half an hour, scheduleN value range
+2 N - 1 (N[0-48])
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getScheduleRecordConfig&usr=admin&pwd=
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+33Foscam IPCamera CGI User Guide
+setScheduleRecordConfig
+Function Set schedule recordconfig
+privilege admin Usage /cgi-bin/CGIProxy.fcgi?cmd=setScheduleRecordConfig
+Param isEnable Schedule-Record enable status, 0-disable,1-enable
+recordLevel Level for drop frame,0-30/30,1-24/30,2-15/30,3-8/30,
+4-4/30,5-1/30;
+spaceFullMode
+The process method when SD card is full,0-cover the
+oldest video and continue record,1-stop record
+isEnableAudio Is recording include audio? 0-no,1-yes
+scheduleN The motion alaram schedule of one week,
+N = 0(Monday) ~6(Sunday)
+For detail, see *1 bellow
+Return None
+Note ·The min unit of schedule is half an hour, scheduleN value range
+2 N - 1 (N[0-48])
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=setScheduleRecordConfig&isEnable=1& recordLev
+el=0& spaceFullMode=0& isEnableAudio=0&schedule0=1023&schedule1=1023&
+schedule2=1023&schedule3=1023&schedule4=1023&schedule5=1023&sched
+ule6=1023&usr=admin&pwd=
+*1 schedule bitmap
+0
+1
+2
+3
+4
+5
+6
+7
+40
+41
+42
+43
+44
+45
+46
+47
+Monday
+Tuesday
+…
+Wednesday
+Thursday
+Wednesday
+Tuesday
+Friday
+Saturday
+Sunday
+Each grid of a row presents half of an hour of one day. For example, 40 presents 20:00
+~20:30.
+The bit 40 set to “1” means the snap is effective between 20:00 to 20:30
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+34Foscam IPCamera CGI User Guide
+setIOAlarmConfig
+Function Set IO alarm config
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=setIOAlarmConfig
+Param isEnable
+Enable state
+linkage
+IO alarm linkage
+bit0:Ring
+bit1:Send mail
+bit2:Snap picture
+bit3:Record
+alarmLevel Alarm level,0-Low,1-high,trigger alarm
+snapInterval Interval for snap picture
+triggerInterval Interval for trigger alarm again,P.s.The true value of
+triggerInterval time is the value of the cgi set add 5s.
+scheduleN
+Return
+N(0-6), alarm schedule
+Set result(0-success,-1-error)
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=setIOAlarmConfig&usr=admin&pwd=&isEnable=1
+&linkage=16& snapInterval=2 & alarmLevel=1 &triggerInterval=5 & schedule0=102
+4&schedule1=1024&schedule2=1024&schedule3=1024&schedule4=1024&sch
+edule5=1024&schedule6=1024
+getIOAlarmConfig
+Function Get IO alarm config
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getIOAlarmConfig
+Param None
+Return isEnable
+Enable state
+linkage
+IO alarm linkage
+bit0:Ring
+bit1:Send mail
+bit2:Snap picture
+bit3:Record
+alarmLevel Alarm level
+snapInterval Interval for snap picture
+triggerInterval Interval for trigger alarm again ， P.s.The true value of
+triggerInterval time is the value of the cgi get add 5s.
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+35Foscam IPCamera CGI User Guide
+scheduleN
+N(0-6), alarm schedule
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getIOAlarmConfig&usr=admin&pwd=
+clearIOAlarmOutput
+Function Clean IO alarm output
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=clearIOAlarmOutput
+Param None
+Return None
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=clearIOAlarmOutput&usr=admin&pwd=
+setAudioAlarmConfig
+Function Set Audio alarm config
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=setAudioAlarmConfig
+Param isEnable
+Enable state
+linkage
+Audio alarm linkage
+bit0:Ring
+bit1:Send mail
+bit2:Snap picture
+bit3:Record
+Return
+sensitivity 0=low 1=middle 2=high
+snapInterval Interval for snap picture
+triggerInterval Interval for trigger alarm again
+scheduleN N(0-6), alarm schedule
+Set result(0-success,-1-error)
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=setAudioAlarmConfig&usr=admin&pwd=&isEnable
+=1&linkage=16& snapInterval=2 & sensitivity=1 &triggerInterval=5 & schedule0=1
+024&schedule1=1024&schedule2=1024&schedule3=1024&schedule4=1024&s
+chedule5=1024&schedule6=1024
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+36Foscam IPCamera CGI User Guide
+getAudioAlarmConfig
+Function Get Audio alarm config
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getAudioAlarmConfig
+Param None
+Return isEnable
+Enable state
+linkage
+IO alarm linkage
+bit0:Ring
+bit1:Send mail
+bit2:Snap picture
+bit3:Record
+sensitivity 0=low 1=middle 2=high
+snapInterval Interval for snap picture
+triggerInterval Interval for trigger alarm again
+scheduleN N(0-6), alarm schedule
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getIOAlarmConfig&usr=admin&pwd=
+setPCAudioAlarmCfg
+Function Set audio alarm config for PC（web live video）
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=setPCAudioAlarmCfg
+Param isEnablePCAudioAl
+Enable state
+arm
+Return
+Set result(0-success,-1-error)
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=setPCAudioAlarmCfg&usr=admin&pwd=&isEnable
+PCAudioAlarm=1
+getPCAudioAlarmCfg
+Function Get audio alarm config for PC（web live video）
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getPCAudioAlarmCfg
+Param None
+Return isEnablePCAudioAl
+Enable state
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+37Foscam IPCamera CGI User Guide
+arm
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getPCAudioAlarmCfg&usr=admin&pwd=
+getMultiDevList
+Function Get multi device list
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getMultiDevList
+Param None
+Return devN
+N(0-8), device information
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getMultiDevList&usr=admin&pwd=
+getMultiDevDetailInfo
+Function Get multi device information
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getMultiDevDetailInfo
+Param chnnl
+Channel no
+Return productType
+Device type
+ip
+Device IP
+port
+Web port
+mediaPort
+Media port
+userName
+User name
+passWord
+Password
+devName
+Device name
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getMultiDevDetailInfo&usr=admin&pwd=
+addMultiDev
+Function Add multiy device
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=addMultiDev
+Param chnnl
+Channel no
+productType
+Device type
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+38Foscam IPCamera CGI User Guide
+Return
+ip Device Ip
+port Web port
+mediaPort Media port
+userName User name
+passWord Password
+devName Device name
+Add result(0-success,-1-error)
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=addMultiDev&usr=admin&pwd=& chnnl =2& product
+Type =H264& ip=192.168.1.3& port=88& mediaPort =88&userName=admin&pass
+Word=&devName=FI9805W
+delMultiDev
+Function Delete multiy device
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=delMultiDev
+Param chnnl
+Return Delete result(0-success,-1-error)
+Channel no
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=delMultiDev&usr=admin&pwd=& chnnl =2
+setDeFrameLevel
+Function Set status to enhance night vision definition
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=setDeFrameLevel
+Param level
+0 -Disable the status of enhance
+1 -Enable the status of enhance
+Return
+None
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=setDeFrameLevel& level=0 &usr=admin&pwd=
+getDeFrameLevel
+Function Get status of enhance the night vision definition
+privilege admin
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+39Foscam IPCamera CGI User Guide
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getDeframeLevel
+Param None
+Return level
+0 -Disable the status of enhance
+1 -Enable the status of enhance
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getDeframeLevel&usr=admin&pwd=
+User account
+addAccount
+Function Add user account privilege admin Usage /cgi-bin/CGIProxy.fcgi?cmd=addAccount
+Param usrName user name usrPwd user password
+privilege 0 Visitor
+1 Operator
+2 Administrator
+Return
+None
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=addAccount&usrName=test&usrPwd=test&privileg
+e=0& usr=admin&pwd=
+delAccount
+Function Delete user account
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=delAccount
+Param usrName
+Return None
+user name
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=delAccount&usrName=test&usr=admin&pwd=
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+40Foscam IPCamera CGI User Guide
+getPassword
+Function Get user password
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getPassword
+Param usrName
+Return None
+user name
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getPassword&usrName=test&usr=admin&pwd=
+changePassword
+Function Change password privilege admin Usage /cgi-bin/CGIProxy.fcgi?cmd=changePassword
+Param usrName The user you want to change password
+oldPwd old password
+newPwd new password
+Return None
+Note Admin can change every user’s password, visitor and operator can only change
+their own password
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=changePassword&usrName=admin&oldPwd=&ne
+wPwd=test&usr=admin&pwd=
+changeUserName
+Function Change user name privilege admin Usage /cgi-bin/CGIProxy.fcgi?cmd=changeUserName
+Param usrName The user you want to change name
+newUsrName The new user name
+Return None
+Note Admin can change every user’s name, visitor and operator can only change
+their own name
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=changeUserName&usrName=admin&
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+41Foscam IPCamera CGI User Guide
+newUsrName=newname&usr=admin&pwd=
+changeUserNameAndPwdTogether
+Function Change user name and password together
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=changeUserNameAndPwdTogether
+Param usrName
+The user you want to change name
+newUsrName
+New user name
+oldPwd
+old password
+newPwd
+new password
+Return None
+Note Admin can change every user’s name, visitor and operator can only change
+their own name
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=changeUserNameAndPwdTogether&usrName=ad
+min&newUsrName=newname&oldPwd=&newPwd=newpwd&usr=admin&pwd=
+logIn
+Function User log in to camera privilege visitor Usage /cgi-bin/CGIProxy.fcgi?cmd= logIn
+Param usrName User name
+remoteIp Access IP
+groupId An id use to distinguish different users,can be set to
+current cpu tick
+Return
+pwd password logInResult 0 Login success
+-1 Parameter check error
+-2 Exceed max user
+-3 User not exist
+-4 User not found
+-5 Password error
+-6 IP repetition
+-7 Access deny
+-8 Already login
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+42Foscam IPCamera CGI User Guide
+privilege
+0 Visitor
+1 Operator
+2 Administrator
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=logIn&usrName=admin&remoteIp=192.168.1.12&
+groupId=673982479&pwd=&usr=admin&pwd=
+logOut
+Function User log out to camera privilege visitor Usage /cgi-bin/CGIProxy.fcgi?cmd=logOut
+Param usrName User name
+ip Access IP
+groupId An id use to distinguish different users,can be set to
+current cpu tick
+Return
+logOutResult
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=logOut&usrName=admin&ip=192.168.1.12&groupI
+d=673982479&usr=admin&pwd=
+getSessionList
+Function Get current session list of the camera
+privilege admin Usage /cgi-bin/CGIProxy.fcgi?cmd=getSessionList
+Param None Return usrCnt session count
+usrN User name of session N
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getSessionList&usr=admin&pwd=
+getUserList
+Function Get user account list of the camera
+privilege admin
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+43Foscam IPCamera CGI User Guide
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getUserList
+Param None Return usrCnt User count
+usrN User name of accnount N
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getUserList&usr=admin&pwd=
+usrBeatHeart
+Function user checks connection with camera
+privilege visitor Usage /cgi-bin/CGIProxy.fcgi?cmd=usrBeatHeart
+Param usrName User name
+remoteIp Access IP
+groupId An id use to distinguish different users,can be set to
+current cpu tick
+Return
+checkResult(0-success,-1-error)
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=usrBeatHeart&usrName=admin&ip=192.168.1.13
+&groupId=673982479&usr=admin&pwd=
+PTZ Control
+ptzMoveUp
+Function Move up
+privilege operator
+Usage /cgi-bin/CGIProxy.fcgi?cmd=ptzMoveUp
+Param None
+Return None
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=ptzMoveUp&usr=admin&pwd=
+ptzMoveDown
+Function
+Move down
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+44Foscam IPCamera CGI User Guide
+privilege operator
+Usage /cgi-bin/CGIProxy.fcgi?cmd=ptzMoveDown
+Param None
+Return None
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=ptzMoveDown&usr=admin&pwd=
+ptzMoveLeft
+Function Move to left
+privilege operator
+Usage /cgi-bin/CGIProxy.fcgi?cmd=ptzMoveLeft
+Param None
+Return None
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=ptzMoveLeft&usr=admin&pwd=
+ptzMoveRight
+Function Move to right
+privilege operator
+Usage /cgi-bin/CGIProxy.fcgi?cmd=ptzMoveRight
+Param None
+Return None
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=ptzMoveRight&usr=admin&pwd=
+ptzMoveTopLeft
+Function Move to top left
+privilege operator
+Usage /cgi-bin/CGIProxy.fcgi?cmd=ptzMoveTopLeft
+Param None
+Return None
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=ptzMoveTopLeft&usr=admin&pwd=
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+45Foscam IPCamera CGI User Guide
+ptzMoveTopRight
+Function Move to top right
+privilege operator
+Usage /cgi-bin/CGIProxy.fcgi?cmd=ptzMoveTopRight
+Param None
+Return None
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=ptzMoveTopRight&usr=admin&pwd=
+ptzMoveBottomLeft
+Function Move to bottom left
+privilege operator
+Usage /cgi-bin/CGIProxy.fcgi?cmd=ptzMoveBottomLeft
+Param None
+Return None
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=ptzMoveBottomLeft&usr=admin&pwd=
+ptzMoveBottomRight
+Function Move to bottom right
+privilege operator
+Usage /cgi-bin/CGIProxy.fcgi?cmd=ptzMoveBottomRight
+Param None
+Return None
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=ptzMoveBottomRight&usr=admin&pwd=
+ptzStopRun
+Function Stop run PT
+privilege operator
+Usage /cgi-bin/CGIProxy.fcgi?cmd=ptzStopRun
+Param None
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+46Foscam IPCamera CGI User Guide
+Return
+None
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=ptzStopRun&usr=admin&pwd=
+ptzReset
+Function Reset PT to default position
+privilege operator
+Usage /cgi-bin/CGIProxy.fcgi?cmd=ptzReset
+Param None
+Return None
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=ptzReset&usr=admin&pwd=
+getPTZSpeed
+Function Get the speed of PT
+privilege operator
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getPTZSpeed
+Param None
+Return speed
+0 Very slow
+1 Slow
+2 Normal speed
+3 Fast
+4 Very fast
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getPTZSpeed&usr=admin&pwd=
+setPTZSpeed
+Function Set the speed of PT
+privilege operator
+Usage /cgi-bin/CGIProxy.fcgi?cmd=setPTZSpeed
+Param speed
+0 Very slow
+1 Slow
+2 Normal speed
+3 Fast
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+47Foscam IPCamera CGI User Guide
+4
+Return
+Very fast
+None
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=setPTZSpeed&speed=2&usr=admin&pwd=
+getPTZPresetPointList
+Function Get all preset point
+privilege operator
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getPTZPresetPointList
+Param None
+Return cnt
+Current preset point count
+pointN
+The name of point N
+Note
+Our device can support at most 16 preset point
+We have 4 point default:LeftMost\RightMost\TopMost\BottomMost
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getPTZPresetPointList&usr=admin&pwd=
+ptzAddPresetPoint
+Function Add preset point
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=ptzAddPresetPoint
+Param name
+Return None
+Note The preset point position is current PT position
+Example /cgi-bin/CGIProxy.fcgi?cmd=ptzAddPresetPoint&name=test&usr=admin&pwd
+Preset point name
+=
+ptzDeletePresetPoint
+Function Delete preset point by name
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=ptzDeletePresetPoint
+Param name
+Return None
+Preset point name
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=ptzDeletePresetPoint&name=test&usr=admin&p
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+48Foscam IPCamera CGI User Guide
+wd=
+ptzGotoPresetPoint
+Function Goto preset position
+privilege operator
+Usage /cgi-bin/CGIProxy.fcgi?cmd=ptzGotoPresetPoint
+Param name
+Return None
+Preset point name
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=ptzGotoPresetPoint&name=test&usr=admin&pwd
+=
+ptzGetCruiseMapList
+Function Get all cruise map list
+privilege operator
+Usage /cgi-bin/CGIProxy.fcgi?cmd=ptzGetCruiseMapList
+Param None
+Return cnt
+Current cruise map point count
+mapN
+The name of map N
+Note
+Our device can support at most 8 cruise map
+We have 2 maps default:Horizental/Vertical
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=ptzGetCruiseMapList&usr=admin&pwd=
+ptzGetCruiseMapInfo
+Function Get the detail info of a cruise map by name
+privilege operator
+Usage /cgi-bin/CGIProxy.fcgi?cmd=ptzGetCruiseMapInfo
+Param name
+Name of the cruise map
+Return getResult
+0
+Success
+-1
+Fail
+pointN
+The preset point name of this cruise map
+Note Our device can support at most 8 preset point one cruise map
+Example /cgi-bin/CGIProxy.fcgi?cmd=ptzGetCruiseMapInfo&name=Horizental&usr=ad
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+49Foscam IPCamera CGI User Guide
+min&pwd=
+ptzSetCruiseMap
+Function Add a cruise map
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=ptzSetCruiseMap
+Param name
+Name of the cruise map
+pointN
+The name of preset point N
+Return None
+Note Our device can support at most 8 preset point one cruise map
+Example /cgi-bin/CGIProxy.fcgi?cmd=ptzSetCruiseMap&name=test&point0=test0&point
+1=test1&point2=test2&point3=test3&point4=test4&point5=test5&point6=&poin
+t7=&usr=admin&pwd=
+ptzDelCruiseMap
+Function Delete a cruise map
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=ptzDelCruiseMap
+Param name
+Return None
+Name of the cruise map
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=ptzDelCruiseMap&name=test&usr=admin&pwd=
+ptzStartCruise
+Function Start a specificate cruise
+privilege operator
+Usage /cgi-bin/CGIProxy.fcgi?cmd=ptzStartCruise
+Param mapName
+Return None
+Name of the cruise map
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=ptzStartCruise& mapName =test&usr=admin&pwd=
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+50Foscam IPCamera CGI User Guide
+ptzStopCruise
+Function Start current cruise
+privilege operator
+Usage /cgi-bin/CGIProxy.fcgi?cmd=ptzStopCruise
+Param None
+Return None
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=ptzStopCruise&usr=admin&pwd=
+setCruiseTime
+Function Set time for continue cruise
+privilege operator
+Usage /cgi-bin/CGIProxy.fcgi?cmd=setCruiseTime
+Param time
+Return None
+Time for continue cruise
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=setCruiseTime& time =5&usr=admin&pwd=
+getCruiseTime
+Function Set time for continue cruise
+privilege operator
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getCuriseTime
+Param
+Return
+time
+Time for continue cruise
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getCuriseTime&usr=admin&pwd=
+setCruiseTimeCustomed
+Function Set time for continue cruise by costomer
+privilege operator
+Usage /cgi-bin/CGIProxy.fcgi?cmd=setCruiseTimeCustomed
+Param time
+Customed time for continue cruise
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+51Foscam IPCamera CGI User Guide
+customed
+Return
+Customed enable state-0-no,1-yes
+None
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=setCruiseTimeCustomed& time =5&customed=1&u
+sr=admin&pwd=
+getCruiseTimeCustomed
+Function Set time for continue cruise by costomer
+privilege operator
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getCruiseTimeCustomed
+Param
+Return
+time Customed time for continue cruise
+customed Customed enable state-0-no,1-yes
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getCruiseTimeCustomed&usr=admin&pwd=
+setCruiseLoopCnt
+Function Set counts for continue cruise
+privilege operator
+Usage /cgi-bin/CGIProxy.fcgi?cmd=setCruiseLoopCnt
+Param count
+Return None
+Counts for continue cruise
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=setCruiseLoopCnt& count =5&usr=admin&pwd=
+getCruiseLoopCnt
+Function Set counts for continue cruise
+privilege operator
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getCruiseLoopCnt
+Param
+Return
+count
+Counts for continue cruise
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getCruiseLoopCnt&usr=admin&pwd=
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+52Foscam IPCamera CGI User Guide
+setCruiseCtrlMode
+Function Set control mode for continue cruise, by time or count
+privilege operator
+Usage /cgi-bin/CGIProxy.fcgi?cmd=setCruiseCtrlMode
+Param mode
+Return None
+Control mode-0:by time,1:by loop count
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=setCruiseCtrlMode& mode =0&usr=admin&pwd=
+getCruiseCtrlMode
+Function Get control mode for continue cruise, by time or count
+privilege operator
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getCruiseCtrlMode
+Param
+Return
+mode
+Control mode-0:by time,1:by loop count
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getCruiseCtrlMode&usr=admin&pwd=
+setCruisePrePointLingerTime
+Function Set linger time for cruise,when pt arrive prepoint
+privilege operator
+Usage /cgi-bin/CGIProxy.fcgi?cmd=setCruisePrepointLingerTime
+Param name
+Cruise map name
+timeN
+Time for each prepoint
+Return None
+Note N:[0-7],max number of prepoints in cruise
+Example /cgi-bin/CGIProxy.fcgi?cmd=setCruisePrePointLingerTime& name =123&time0=
+0&time1=1&time2=2&time3=3&time4=4&time5=5&time6=6&time7=7&usr=ad
+min&pwd=
+getCruisePrePointLingerTime
+Function Set linger time for cruise,when pt arrive prepoint
+privilege operator
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+53Foscam IPCamera CGI User Guide
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getCruisePrepointLingerTime
+Param name
+Cruise map name
+Return timeN
+Time for each prepoint
+Note N:[0-7],max number of prepoints in cruise
+Example /cgi-bin/CGIProxy.fcgi?cmd=getCruisePrePointLingerTime&name=123&usr=a
+dmin&pwd=
+zoomIn
+Function Zoom in
+privilege operator
+Usage /cgi-bin/CGIProxy.fcgi?cmd=zoomIn
+Param None
+Return None
+Note Only supported by the device has zoom lens
+Example /cgi-bin/CGIProxy.fcgi?cmd=zoomIn&usr=admin&pwd=
+zoomOut
+Function Zoom out
+privilege operator
+Usage /cgi-bin/CGIProxy.fcgi?cmd=zoomOut
+Param None
+Return None
+Note Only supported by the device has zoom lens
+Example /cgi-bin/CGIProxy.fcgi?cmd=zoomOut&usr=admin&pwd=
+zoomStop
+Function Stop zoom run
+privilege operator
+Usage /cgi-bin/CGIProxy.fcgi?cmd=zoomStop
+Param None
+Return None
+Note Only supported by the device has zoom lens
+Example /cgi-bin/CGIProxy.fcgi?cmd=zoomStop&usr=admin&pwd=
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+54Foscam IPCamera CGI User Guide
+getZoomSpeed
+Function Get the speed of Zoom
+privilege operator
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getZoomSpeed
+Param None
+Return speed
+0 Slow
+1 Normal
+2 Fast
+Note Only supported by the device has zoom lens
+Example /cgi-bin/CGIProxy.fcgi?cmd=getZoomSpeed&usr=admin&pwd=
+setZoomSpeed
+Function Set the speed of PTZ
+privilege operator
+Usage /cgi-bin/CGIProxy.fcgi?cmd=setZoomSpeed
+Param speed
+0 Slow
+1 Normal
+2 Fast
+Return None
+Note Only supported by the device has zoom lens
+Example /cgi-bin/CGIProxy.fcgi?cmd=setZoomSpeed&usr=admin&pwd=&speed=1
+setPTZSelfTestMode
+Function Set the selftest mode of PTZ
+privilege operator
+Usage /cgi-bin/CGIProxy.fcgi?cmd= setPTZSelfTestMode
+Param mode
+0 No selftest
+1 Normal selftest
+2 After
+normal
+selftest,
+then
+goto
+presetpoint-appointed
+Return None
+Note Only supported by ipc that can enable ptz-selftest
+Example /cgi-bin/CGIProxy.fcgi?usr=admin&pwd=&cmd=setPTZSelfTestMode&mod
+e=2
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+55Foscam IPCamera CGI User Guide
+getPTZSelfTestMode
+Function Get the selftest mode of PTZ
+privilege operator
+Usage /cgi-bin/CGIProxy.fcgi?cmd= getPTZSelfTestMode
+Param None
+Return mode
+0 No selftest
+1 Normal selftest
+2 After
+normal
+selftest,
+then
+goto
+presetpoint-appointed
+Return None
+Note Only supported by ipc that can enable ptz-selftest
+Example /cgi-bin/CGIProxy.fcgi?usr=admin&pwd=&cmd=getPTZSelfTestMode
+setPTZPrePointForSelfTest
+Function Set presetpoint for selftest of PTZ
+privilege operator
+Usage /cgi-bin/CGIProxy.fcgi?cmd= setPTZPrePointForSelfTest
+Param name
+Return None
+Note Only supported by ipc that can enable ptz-selftest-2
+Example /cgi-bin/CGIProxy.fcgi?usr=admin&pwd=&cmd=setPTZPrePointForSelfTes
+Preset point name
+t&name=TopMost
+getPTZPrePointForSelfTest
+Function Get the presetpoint for selftest of PTZ
+privilege operator
+Usage /cgi-bin/CGIProxy.fcgi?cmd= getPTZPrePointForSelfTest
+Param None
+Return name
+Note Only supported by ipc that can enable ptz-selftest
+Example /cgi-bin/CGIProxy.fcgi?usr=admin&pwd=&cmd=getPTZPrePointForSelfTes
+Preset point name
+t
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+56Foscam IPCamera CGI User Guide
+set485Info
+Function Set informations of 485
+privilege operator
+Usage /cgi-bin/CGIProxy.fcgi?cmd=set485Info
+Param rs485Protocol
+Protocol
+rs485Addr
+Address
+rs485Baud
+Baud rate
+rs485DataBit
+DataBit
+rs485StopBit
+StopBit
+rs485Check
+Parity
+Return None
+Note Only supported by ipc that can enable 485
+Example /cgi-bin/CGIProxy.fcgi?usr=admin&pwd=&cmd=set485Info&rs485Protocol
+=0&rs485Addr=1&rs485Baud=1200&rs485DataBit=7&rs485StopBit=1&rs
+485Check=0
+get485Info
+Function Get informations of 485
+privilege operator
+Usage /cgi-bin/CGIProxy.fcgi?cmd=get485Info
+Param None
+Return rs485Protocol
+Protocol
+rs485Addr
+Address
+rs485Baud
+Baud rate
+rs485DataBit
+DataBit
+rs485StopBit
+StopBit
+rs485Check
+Parity
+Note Only supported by ipc that can enable 485
+Example /cgi-bin/CGIProxy.fcgi?usr=admin&pwd=&cmd=get485Info
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+57Foscam IPCamera CGI User Guide
+Network
+getIPInfo
+Function Get IP Info privilege admin Usage /cgi-bin/CGIProxy.fcgi?cmd=getIPInfo
+Param None Return isDHCP Obtain ip from dhcp server or not
+ip ip address(Can only support ipv4 yet)
+gate gateway(“0.0.0.0” when use dhcp)
+mask subnet mask
+dns1 The first dns server addr(“0.0.0.0” when use dhcp)
+dns2 The second dns server addr(“0.0.0.0” when use dhcp)
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getIPInfo&usr=admin&pwd=
+setIpInfo
+Function Set IP Info privilege admin Usage /cgi-bin/CGIProxy.fcgi?cmd=setIpInfo
+Param isDHCP Obtain ip from dhcp server or not
+ip ip address(Can only support ipv4 yet)
+gate gateway
+mask subnet mask
+dns1 The first dns server addr
+dns2 The second dns server addr
+Return None
+Note System will reboot automatically to take effect after call this CGI command
+Example /cgi-bin/CGIProxy.fcgi?cmd=setIpInfo&isDHCP=0&ip=192.168.1.88&gate=192
+.168.1.1&mask=255.255.255.0&dns1=192.168.1.1&dns2=192.168.1.1&usr=a
+dmin&pwd=
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+58Foscam IPCamera CGI User Guide
+refreshWifiList
+Function Start scan the aps around
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=refreshWifiList
+Param None
+Return None
+Note This operation may takes a while, about 20 seconds or above, the other
+operation on this device will be blocked during the period.
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=refreshWifiList&usr=admin&pwd=
+getWifiList
+Function Get the aps around after refreshWifiList
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getWifiList
+Param startNo
+The start NO of the ap list you want to get.
+For example:The are 30 aps around you, you want to look at the
+last ten aps, then startNo=20
+Return
+totalCnt Total count of aps curCnt Current aps count apN The detail info of ap N ssid AP name
+Format: mac AP’s mac address
+ssid+mac+quality+isEncryp quality Signal quality(0~100)
+t+encrypType isEncrypt Encrypt or not
+encrypType 0
+Open mode
+1
+WEP
+2
+WPA
+3
+WPA2
+4
+WPA/WPA2
+Note Only 10 aps will be returned one time
+Example /cgi-bin/CGIProxy.fcgi?cmd=getWifiList&startNo=0&usr=admin&pwd=
+setWifiSetting
+Function
+Set wifi config
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+59Foscam IPCamera CGI User Guide
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=setWifiSetting
+Param isEnable
+Enable state
+isUseWifi
+Use wifi or not
+ssid
+AP name
+netType
+0
+Infra net
+1
+Ad-hoc
+0
+Open mode
+1
+WEP
+2
+WPA
+3
+WPA2
+4
+WPA/WPA2
+encryptType
+Not supported yet
+psk The psk of WPA WPA2
+authMode 0
+Open mode
+1
+Shared key
+2
+Auto mode
+0
+ASIC
+1
+Hex
+keyFormat
+defaultKey
+1~4
+key1
+key2
+key3
+key4
+key1Len 64 or 128
+key2Len 64 or 128
+key3Len 64 or 128
+key4Len 64 or 128
+isNewFormat
+1
+Use in new version when you need encrypt wifi
+password.if you are old platform you need not use it.
+Eg: using this param ,if your password is “123&”,you
+must use “49,50,51,38” instead it .(Each character
+must use ASCCI code conversion, and separated by
+commas characters)
+Return None
+Note Camera will not connect to AP unless you enject your cable
+Example /cgi-bin/CGIProxy.fcgi?cmd=setWifiSetting&isEnable=1&isUseWifi=1&ssid=fosta
+r_soft&netType=0&encryptType=4&psk=41,48,38&authMode=0&keyFormat=0&d
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+60Foscam IPCamera CGI User Guide
+efaultKey=1&key1=&key2=&key3=&key4=&key1Len=64&key2Len=64&key3Len
+=64&key4Len=64&usr=admin&pwd=
+getWifiConfig
+Function Get wifi config
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getWifiConfig
+Param None
+Return isEnable
+Enable state
+isUseWifi
+Use wifi or not
+isConnecte
+Connected state
+d
+connected
+Connedted ap
+AP
+ssid AP name encryptTyp 0 Open mode
+e 1 WEP
+2 WPA
+3 WPA2
+4 WPA/WPA2
+psk The psk of WPA WPA2
+authMode 0 Open mode
+1 Shared key
+2 Auto mode
+0 ASIC
+1 Hex
+keyFormat
+defaultKey
+1~4
+key1
+key2
+key3
+key4
+Return
+key1Len 64 or 128
+key2Len 64 or 128
+key3Len 64 or 128
+key4Len 64 or 128
+None
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+61Foscam IPCamera CGI User Guide
+Note Camera will not connect to AP unless you enject your cable
+Example /cgi-bin/CGIProxy.fcgi?cmd=getWifiConfig&usr=admin&pwd=
+getPortInfo
+Function Get ports of camera
+privilege admin Usage /cgi-bin/CGIProxy.fcgi?cmd=getPortInfo
+Param None Return webPort http port(default value is 88)
+httpsPort https port (default value is 443)
+mediaPort media port(default value is 88)
+onvifPort Onvif Port( default value is 888 )
+Note
+.You can call this CGI command without usr or pwd section
+. onvifPort param only for onvif camera, the camra which does not has onvif
+function does not have this param
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getPortInfo&usr=admin&pwd=
+setPortInfo
+Function Set ports of camera
+privilege admin Usage /cgi-bin/CGIProxy.fcgi?cmd=getPortInfo
+Param webPort http port(default value is 88)
+mediaPort media port(default value is 88)
+httpsPort https port (default value is 443)
+onvifPort Onvif Port( default value is 888 )
+Return None
+Note .Re login is needed after call this CGI command
+. onvifPort param only for onvif camera, the camra which does not has onvif
+function does not have this param
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=setPortInfo&webPort=88&mediaPort=88&httpsPo
+rt=443& onvifPort=888 &usr=admin&pwd=
+getUPnPConfig
+Function
+Get UpnP config
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+62Foscam IPCamera CGI User Guide
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getUPnPConfig
+Param None
+Return isEnable
+is Enable UpnP function
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getUPnPConfig&usr=admin&pwd=
+setUPnPConfig
+Function Set UpnP config
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=setUPnPConfig
+Param isEnable
+Return None
+is Enable UpnP function
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=setUPnPConfig&isEnable=1&usr=admin&pwd=
+getDDNSConfig
+Function Get DDNS config privilege admin Usage /cgi-bin/CGIProxy.fcgi?cmd=getDDNSConfig
+Param None Return isEnable is Enable DDNS update
+hostName DDNS domain
+ddnsServer 0 Factory DDNS
+1 Oray
+2 3322
+3 no-ip
+4 dyndns
+user user name
+password password
+factoryDDNS factory ddns
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getDDNSConfig&usr=admin&pwd=
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+63Foscam IPCamera CGI User Guide
+setDDNSConfig
+Function Set DDNS config privilege admin Usage /cgi-bin/CGIProxy.fcgi?cmd=setDDNSConfig
+Param isEnable is Enable DDNS update
+hostName DDNS domain
+ddnsServer 0 Factory DDNS
+1 Oray
+2 3322
+3 no-ip
+4 dyndns
+user user name
+password password
+Return None
+Note This command can only be used to set the third party ddns
+Example /cgi-bin/CGIProxy.fcgi?cmd=setDDNSConfig&isEnable=1&hostName=test.dyn
+dns.org&ddnsServer=4&user=test&password=test&usr=admin&pwd=
+setFtpConfig
+Function Set FTP config privilege admin Usage /cgi-bin/CGIProxy.fcgi?cmd=setFtpConfig
+Param ftpAddr FTP server address, you can contain sub directory in it
+ftpPort FTP port
+mode 0
+PASV mode
+1
+PORT mode
+Return
+userName user name
+password password
+None
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=setFtpConfig&ftpAddr=ftp://192.168.1.2/sbuDir&ft
+pPort=21&mode=0&userName=test&password=test&usr=admin&pwd=
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+64Foscam IPCamera CGI User Guide
+getFtpConfig
+Function Get FTP config privilege admin Usage /cgi-bin/CGIProxy.fcgi?cmd=getFtpConfig
+Param None Param ftpAddr FTP server address, you can contain sub directory in it
+ftpPort FTP port
+mode 0
+PASV mode
+1
+PORT mode
+userName user name
+password password
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getFtpConfig&usr=admin&pwd=
+testFtpServer
+Function Test FTP server privilege admin Usage /cgi-bin/CGIProxy.fcgi?cmd=testFtpServer
+Param ftpAddr FTP server address, you can contain sub directory in it
+ftpPort FTP port
+mode 0
+PASV mode
+1
+PORT mode
+Return
+fptuserName user name ftppassword password testResult 0 Success
+-1 Fail
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=testFtpServer&ftpAddr=ftp://192.168.1.2/sbuDir&f
+tpPort=21&mode=0&fptuserName=test&ftppassword=test&usr=admin&pwd=
+getSMTPConfig
+Function Get mail config
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getSMTPConfig
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+65Foscam IPCamera CGI User Guide
+Param None Return isEnable is enable camera send mail?
+server SMTP server address
+port smtp port
+isNeedAuth Need auth user account or not
+tls 0
+None
+1
+TLS
+2
+STARTTLS
+user user name
+password password
+sender
+reciever
+Use “,” between 2 senders, for exapler:
+aaa@123.com,bbb@456.com
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getSMTPConfig&usr=admin&pwd=
+setSMTPConfig
+Function Get mail config privilege admin Usage /cgi-bin/CGIProxy.fcgi?cmd=setSMTPConfig
+Param isEnable is enable camera send mail?
+server SMTP server address
+port smtp port
+isNeedAuth Need auth user account or not
+tls 0
+None
+1
+TLS
+2
+STARTTLS
+user user name
+password password
+sender
+reciever
+Use “,” between 2 senders, for exapler:
+aaa@123.com,bbb@456.com
+Return
+None
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=setSMTPConfig&isEnable=1&server=smtp.gmail.
+com&port=587&isNeedAuth=1&user=test&password=test&send=test@gmail.c
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+66Foscam IPCamera CGI User Guide
+om&reciever=aa@123.com,bb@456.com&usr=admin&pwd=
+smtpTest
+Function Test mail setting privilege admin Usage /cgi-bin/CGIProxy.fcgi?cmd=smtpTest
+Param smtpServer SMTP server address
+port smtp port
+isNeedAuth Need auth user account or not
+tls 0
+None
+1
+TLS
+2
+STARTTLS
+Return
+Note
+user user name password password sender Send Email address
+testResult 0 Success
+-1 Fail
+You must call setSMTPConfig firstly.
+We will send a test mail to all recievers
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=smtpTest& smtpServer =smtp.gmail.com&port=587
+&isNeedAuth=1&user=test&password=test&sender=test@gmail.com&usr=ad
+min&pwd=
+setP2PEnable
+Function Set p2p status
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=setP2PEnable
+enable
+Return
+0 Disable
+1 Enable
+None
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=setP2PEnable& enable =1&usr=admin&pwd=
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+67Foscam IPCamera CGI User Guide
+getP2PEnable
+Function Get p2p status
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getP2PEnable
+Param None
+enable
+0 Disable
+1 Enable
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getP2PEnable&usr=admin&pwd=
+setP2PPort
+Function Set p2p port
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=setP2PPort
+port
+Return
+P2P port number
+None
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=setP2PPort& port =12345&usr=admin&pwd=
+getP2PPort
+Function Get p2p port
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getP2PPort
+Param None
+Return port
+P2P port number
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getP2PPort&usr=admin&pwd=
+getP2PInfo
+Function Get p2p UID
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getP2PInfo
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+68Foscam IPCamera CGI User Guide
+Param None
+Return uid
+P2P UID
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getP2PInfo&usr=admin&pwd=
+getPPPoEConfig
+Function Get PPPoE config
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getPPPoEConfig
+Param None
+Return isEnable
+is Enable PPPoE function
+userName
+userName
+password
+password
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getPPPoEConfig&usr=admin&pwd=
+setPPPoEConfig
+Function Set PPPoE config
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=setPPPoEConfig
+Param isEnable
+is Enable PPPoE function
+userName
+userName
+password
+password
+Return
+None
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=setPPPoEConfig&isEnable=1&userName=usr&p
+assword=pwd&usr=admin&pwd=
+Device manage
+setSystemTime
+Function Set system time
+privilege admin
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+69Foscam IPCamera CGI User Guide
+Usage /cgi-bin/CGIProxy.fcgi?cmd=setSystemTime
+Param timeSource
+ntpServer
+0 Get time from NTP server
+1 Set time manually
+ntp server addr
+Support ntp server:
+time.nist.gov
+time.kriss.re.kr
+time.windows.com
+time.nuri.net
+dateFormat
+timeFormat
+timeZone
+0 YYYY-MM-DD
+1 DD/MM/YYYY
+2 MM/DD/YYYY
+0 12 hours
+1 24 hours
+The seconds between local time and GMT time.
+For example: timeZone=3600 presents GMT-01:00
+timeZone=-3600 presents GMT+01:00
+isDst Daylight saving time (0-disable,1-enable)
+dst Not in use currently
+year
+mon
+day
+hour
+minute
+sec
+Return None
+Note This command can only be used to set the third party ddns
+Example /cgi-bin/CGIProxy.fcgi?cmd=setSystemTime&timeSource=1&ntpServer=&date
+Format=0&timeFormat=0&timeZone=0&isDst=0&dst=0&year=2012&mon=1&
+day=6&hour=9&minute=35&sec=0&usr=admin&pwd=
+getSystemTime
+Function Get system time
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getSystemTime
+Param None
+Return timeSource
+0 Get time from NTP server
+1 Set time manually
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+70Foscam IPCamera CGI User Guide
+ntpServer
+ntp server addr
+Support ntp server:
+time.nist.gov
+time.kriss.re.kr
+time.windows.com
+time.nuri.net
+dateFormat
+timeFormat
+timeZone
+0 YYYY-MM-DD
+1 DD/MM/YYYY
+2 MM/DD/YYYY
+0 12 hours
+1 24 hours
+The seconds between local time and GMT time.
+For example: timeZone=3600 presents GMT-01:00
+timeZone=-3600 presents GMT+01:00
+isDst Daylight saving time (0-disable,1-enable)
+dst Not in use currently
+year
+mon
+day
+hour
+minute
+sec
+Note This command can only be used to set the third party ddns
+Example /cgi-bin/CGIProxy.fcgi?cmd=getSystemTime&usr=admin&pwd=
+openInfraLed
+Function Force open infra led
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=openInfraLed
+Param None
+Return ctrlResult
+0 Success
+-1 Fail
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=openInfraLed&usr=admin&pwd=
+closeInfraLed
+Function
+Force close infra led
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+71Foscam IPCamera CGI User Guide
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=closeInfraLed
+Param None
+Return ctrlResult
+0 Success
+-1 Fail
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=closeInfraLed&usr=admin&pwd=
+getInfraLedConfig
+Function Get infra led config
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getInfraLedConfig
+Param None
+Return mode
+0 Auto mode
+1 Manual mode
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getInfraLedConfig&usr=admin&pwd=
+setInfraLedConfig
+Function Set infra led config
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=setInfraLedConfig&mode=0
+Param mode
+Return
+0 Auto mode
+1 Manual mode
+None
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=setInfraLedConfig&mode=&usr=admin&pwd=
+getScheduleInfraLedConfig
+Function Get config for infra led switch schedule
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getScheduleInfraLedConfig
+Param None
+Return startHourN
+Start hour
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+72Foscam IPCamera CGI User Guide
+startMinN Start Minitue
+endHourN End hour
+endMinN End minitue
+Note N:[0-2],the number of infra led switch schedule
+Example /cgi-bin/CGIProxy.fcgi?cmd=getScheduleInfraLedConfig&usr=admin&pwd=
+setScheduleInfraLedConfig
+Function Set config for infra led switch schedule
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=setScheduleInfraLedConfig&mode=0
+Param startHourN
+Start hour
+startMinN
+Start Minitue
+endHourN
+End hour
+endMinN
+End minitue
+Return None
+Note N:[0-2],the number of infra led switch schedule
+Example /cgi-bin/CGIProxy.fcgi?cmd=setInfraLedConfig&mode=&usr=admin&pwd=
+getDevState
+Function Get all device state
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getDevState
+Param None
+Return IOAlarm
+0 Disabled
+1 No alaram
+2 Detect alarm
+motionDetectAlar 0 Disabled
+am 1 No alarm
+2 Detect alarm
+0 Disabled
+1 No alarm
+2 Detect alarm
+0 Not in recording
+1 Recording
+0 No sd card
+soundAlarm
+record
+sdState
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+73Foscam IPCamera CGI User Guide
+1 Sd card ok
+2 Sd card read only
+sdFreeSpace Free space of sd card by unit of k
+sdTotalSpace Total space of sd card by unit of k
+ntpState 0
+Disabled
+1
+Update success
+2
+Update fail
+0
+Disabled
+1
+Update success
+2
+Update fail
+ddnspState
+url DDNS url upnpState 0 Disabled
+1 Update success
+2 Update fail
+0 No wifi connected
+1 Connected
+isWifiConnected
+wifiConnectedAP The ssid of the ap which has been connected
+infraLedState 0
+OFF
+1
+ON
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getDevState&usr=admin&pwd=
+getDevName
+Function Get camera name
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getDevName
+Param None
+Return devName
+Camera name
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getDevName&usr=admin&pwd=
+setDevName
+Function Set camera name
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=setDevName
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+74Foscam IPCamera CGI User Guide
+Param devName
+Return None
+Camera name
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=setDevName&devName=test&usr=admin&pwd=
+getDevInfo
+Function Get camera information
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getDevInfo
+Param None
+Return productNam
+e
+Camera model
+serialNo
+Serial no
+devName
+Camera name
+mac
+Mac address
+year
+mon
+day
+hour
+min
+sec
+timeZone Time zone
+firmwareVer Firmware version
+hardwareVer Hardware version
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getDevInfo&usr=admin&pwd=
+getProductModel
+Function Get camera model number
+privilege visitor
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getProductModel
+Param None
+Return model
+Camera model number
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+75Foscam IPCamera CGI User Guide
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getProductModel&usr=admin&pwd=
+getProductModelName
+Function Get camera model name
+privilege visitor
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getProductModelName
+Param None
+Return modelName
+Camera model name
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getProductModelName&usr=admin&pwd=
+getProductLanguage
+Function Get camera main language
+privilege visitor
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getProductLanguage
+Param None
+Return language
+Camera main language
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getProductLanguage&usr=admin&pwd=
+getProductSensorType
+Function Get camera sensor type number
+privilege visitor
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getProductSensorType
+Param None
+Return sensorType
+Camera sensor type number
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getProductSensorType&usr=admin&pwd=
+getProductWifiType
+Function
+Get camera wifi type number
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+76Foscam IPCamera CGI User Guide
+privilege visitor
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getProductWifiType
+Param None
+Return wifiType
+Camera wifi type number
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getProductWifiType&usr=admin&pwd=
+getProductSdFlag
+Function Whether camera support sd card
+privilege visitor
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getProductSdFlag
+Param None
+Return sdFlag
+Camera flag to support sd card-0:no,1:yes
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getProductSdFlag&usr=admin&pwd=
+getProductOutdoorFlag
+Function Whether camera is outdoor machine
+privilege visitor
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getProductOutdoorFlag
+Param None
+Return outdoorFlag
+Whether camera is outdoor machine- 0:no,1:yes
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getProductOutdoorFlag&usr=admin&pwd=
+getProductPtFlag
+Function Whether camera is pt machine
+privilege visitor
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getProductPtFlag
+Param None
+Return ptFlag
+Whether camera is pt machine- 0:no,1:yes
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getProductPtFlag&usr=admin&pwd=
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+77Foscam IPCamera CGI User Guide
+getProductZoomFlag
+Function Whether camera is zoom machine
+privilege visitor
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getProductZoomFlag
+Param None
+Return zoomFlag
+Whether camera is zoom machine- 0:no,1:yes
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getProductZoomFlag&usr=admin&pwd=
+getProductRs485Flag
+Function Whether camera support rs485
+privilege visitor
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getProductRs485Flag
+Param None
+Return rs485Flag
+Whether camera support rs485- 0:no,1:yes
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getProductRs485Flag&usr=admin&pwd=
+getProductIoAlarmFlag
+Function Whether camera support IO alarm
+privilege visitor
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getProductIoAlarmFlag
+Param None
+Return ioAlarmFlag
+Whether camera support IO alarm- 0:no,1:yes
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getProductIoAlarmFlag&usr=admin&pwd=
+getProductOnvifFlag
+Function Whether camera support Onvif
+privilege visitor
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getProductOnvifFlag
+Param None
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+78Foscam IPCamera CGI User Guide
+Return
+onvifFlag
+Whether camera support onvif- 0:no,1:yes
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getProductOnvifFlag&usr=admin&pwd=
+getProductP2pFlag
+Function Whether camera support P2p
+privilege visitor
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getProductP2pFlag
+Param None
+Return p2pFlag
+Whether camera support p2p- 0:no,1:yes
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getProductP2pFlag&usr=admin&pwd=
+getProductWpsFlag
+Function Whether camera support Wps
+privilege visitor
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getProductWpsFlag
+Param None
+Return wpsFlag
+Whether camera support wps- 0:no,1:yes
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getProductWpsFlag&usr=admin&pwd=
+getProductAudioFlag
+Function Whether camera support audio-speak
+privilege visitor
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getProductAudioFlag
+Param None
+Return audioFlag
+Whether camera support audio for speak- 0:no,1:yes
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getProductAudioFlag&usr=admin&pwd=
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+79Foscam IPCamera CGI User Guide
+getProductTalkFlag
+Function Whether camera support audio-talk
+privilege visitor
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getProductTalkFlag
+Param None
+Return talkFlag
+Whether camera support audio for talk- 0:no,1:yes
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getProductTalkFlag&usr=admin&pwd=
+getProductAppVer
+Function Get camera application version
+privilege visitor
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getProductAppVer
+Param None
+Return appVer
+camera application version
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getProductAppVer&usr=admin&pwd=
+getProductAllInfo
+Function Get camera Information
+privilege visitor
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getProductAllInfo
+Param None
+Return model
+Model number
+modelName
+Model Name
+language
+Main language
+sensorType
+Sensor type number
+wifiType
+Wifi Type Number
+reserve1
+Reserve
+reserve2
+Reserve
+reserve3
+Reserve
+reserve4
+Reserve
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+80Foscam IPCamera CGI User Guide
+sdFlag Whether machine support sd card
+outdoorFlag Whether machine is outdoor
+ptFlag Whether machine support pt
+zoomFlag Whether machine support zoom
+rs485Flag Whether machine support rs485
+ioAlarmFlag Whether machine support io alarm
+onvifFlag Whether machine support onvif
+p2pFlag Whether machine support p2p
+wpsFlag Whether machine support wps
+audioFlag Whether machine support audio-speak
+talkFlag Whether machine support audio-talk
+reserveFlag1 reserve
+reserveFlag2 reserve
+reserveFlag3 reserve
+reserveFlag4 reserve
+appVer Camera application version
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getProductAllInfo&usr=admin&pwd=
+getGeneratePubKey
+Function Get public key generated by camera for software reset
+privilege visitor Usage /cgi-bin/CGIProxy.fcgi?cmd=getGeneratePubKey
+Param None Return genResult The result that camera generate public key for software reset
+genPubLen The length of public key
+pubKey Public key
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getGeneratePubKey&usr=admin&pwd=
+toolRestoreToFactory
+Function Set camera reset to factory by software
+privilege visitor
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+81Foscam IPCamera CGI User Guide
+Usage /cgi-bin/CGIProxy.fcgi?cmd=toolRestoreToFactory
+Param codeLen Code length for camera reset
+code Code for camera reset
+restoreResult The result that camera reset
+Return
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=toolRestoreToFactory&codeLen=10&code=xxxxx
+xxxxx&&usr=admin&pwd=
+System
+rebootSystem
+Function Reboot camera
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=rebootSystem
+Param None
+Return None
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=rebootSystem&usr=admin&pwd=
+restoreToFactorySetting
+Function Restore to factory setting
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=restoreToFactorySetting
+Param None
+Return None
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd= restoreToFactorySetting&usr=admin&pwd=
+exportConfig
+Function Export config file
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=exportConfig
+Param None
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+82Foscam IPCamera CGI User Guide
+Return fileName
+Note After call this command, you can get the config file by visit the following addr:
+The config name
+/configs/export/configs.bin
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=exportConfig&usr=admin&pwd=
+ImportConfig
+Function Import config file
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=importConfig&usr=admin&pwd=
+Param None
+Return None
+Note System will reboot automatically after this operation
+Example <form name="form5" method="post" target="retframe"
+enctype="multipart/form-data"
+action="cgi-bin/ CGIProxy.fcgi?cmd=importConfig&usr=admin&pwd=" >
+<input type="file" name="setting_file" >
+<input type="submit" value="import" >
+</form>
+FwUpgrade
+Function Upgrade firmware
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=fwUpgrade&usr=admin&pwd=
+Param None
+Return upgradeResu
+0
+Upgrade success
+lt
+-1
+Upgrade fail
+Note
+System will reboot automatically after this operation.
+This action may takes about 120s when upgrade app firmware, takes about
+60s when upgrade system firmware
+Example
+<form name="form5" method="post" target="retframe" enctype="multipart/form-data"
+action="cgi-bin/ CGIProxy.fcgi?cmd=fwUpgrade&usr=admin&pwd=" >
+<input type="file" name="fw_file" >
+<input type="submit" value="upgrade" >
+</form>
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+83Foscam IPCamera CGI User Guide
+removePatch
+Function remove firewall patch
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=removePatch
+Param None
+Return None
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=removePatch&usr=admin&pwd=
+MISC
+getFirewallConfig
+Function Get firewall config privilege admin Usage /cgi-bin/CGIProxy.fcgi?cmd=getFirewallConfig
+Param None Return isEnable Use firewall or not
+rule 0 The ip list can’t access
+1 Only allow the ip list to access
+ipListN
+The ip address(Network address) of list N
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getFirewallConfig&usr=admin&pwd=
+setFirewallConfig
+Function Set firewall config privilege admin Usage /cgi-bin/CGIProxy.fcgi?cmd=setFirewallConfig
+Param isEnable Use firewall or not
+rule 0 The ip list can’t access
+1 Only allow the ip list to access
+ipListN
+Return
+The ip address(Network address) of list N
+None
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+84Foscam IPCamera CGI User Guide
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=setFirewallConfig&isEnable=1&rule=0&ipList0=0
+&ipList1=0&ipList2=0&ipList3=0&ipList4=0&ipList5=0&ipList6=0&ipList7=0&us
+r=admin&pwd=
+getLog
+Function Get system log privilege admin Usage /cgi-bin/CGIProxy.fcgi?cmd=getLog
+Param offset Where you want to start get log
+count How many logs you want to get, must less then 20
+totalCnt Total log count
+curCnt current log count
+logN log information, consist by
+Return
+time+user+ip+logID
+Note
+We can have 1000 record of log at most.
+We can get 10 log at most one time
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getLog&offset=0&count=20&usr=admin&pwd=
+3. All platform except 3518A add cgi
+getAudioVolume
+Function Get Audio Volume
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getAudioVolume
+Param None
+Return volume
+Volume value (0~100)
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getAudioVolume&usr=admin&pwd=
+setAudioVolume
+Function
+Set Audio Volume
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+85Foscam IPCamera CGI User Guide
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=setAudioVolume
+Param volume
+Return None
+Volume value (0~100)
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=setAudioVolume&volume=100&usr=admin&pwd=
+getWifiMode
+Function Get Wifi Mode
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getWifiMode
+Param None
+Return wifiMode
+0 sta
+1 softAp
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getWifiMode&usr=admin&pwd=
+getTemperatureAlarmConfig
+Function Get Temperature Alarm Config
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getTemperatureAlarmConfig
+Param None
+Return isEnable
+linkage
+0 disable
+1 enable
+Motion alarm linkage bit0:Ring
+( bit7| bit3 | bit2 | bit1 | bit0 ) bit1:Send mail
+bit2:Snap picture
+bit3:Record
+bit7:Push to phone
+lowerLimit Top temperature
+Lower temperature
+snapInterval Interval for snap picture
+triggerInterval Interval for trigger alarm again,P.s.The true value of
+topLimit
+triggerInterval time is the value of the cgi get add 5s.
+scheduleN
+N(0-6), alarm schedule
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+86Foscam IPCamera CGI User Guide
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getTemperatureAlarmConfig&usr=admin&pwd=
+setTemperatureAlarmConfig
+Function Set Temperature Alarm Config
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=setTemperatureAlarmConfig
+Param isEnable
+linkage
+0 disable
+1 enable
+Motion alarm linkage bit0:Ring
+( bit7| bit3 | bit2 | bit1 | bit0 )
+bit1:Send mail
+bit2:Snap picture
+bit3:Record
+bit7:Push
+to
+phone
+lowerLimit Top temperature
+Lower temperature
+snapInterval Interval for snap picture
+triggerInterval Interval for trigger alarm again,P.s.The true value
+topLimit
+of triggerInterval time is the value of the cgi set
+add 5s.
+scheduleN
+Return
+N(0-6), alarm schedule
+None
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=setTemperatureAlarmConfig& isEnable=1&linkag
+e=129&topLimit=40&lowerLimit=20snapInterval=2&triggerInterval=5&schedul
+e0=1023&schedule1=1023&schedule2=1023&schedule3=1023&schedule4=1023
+&schedule5=1023&schedule6=1023 &usr=admin&pwd=
+getTemperatureState
+Function Get Temperature Degree
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getTemperatureState
+Param None
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+87Foscam IPCamera CGI User Guide
+Return
+degree
+Temperature ℃！
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getTemperatureState&usr=admin&pwd=
+Music
+setMusicDefaultListRefresh
+Function Refresh default list
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=setMusicDefaultListRefresh
+Param None
+Return None
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=setMusicDefaultListRefresh&usr=admin&pwd=
+getMusicListsName
+Function Get Music lists name
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getMusicListsName
+Param None
+Return getResult
+0 Sucess
+-1 Faild
+cnt List number
+list0 List0 name
+list1 List1 name
+list2 List2 name
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=setMusicDefaultListRefresh&usr=admin&pwd=
+getMusicsNameOfList
+Function Get Musics name of list
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getMusicsNameOfList
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+88Foscam IPCamera CGI User Guide
+Param
+Return
+name List name
+startNo Get music start from startNo
+musicNum Expect to get music numbers
+getResult 0
+Sucess
+-1
+Faild
+cnt Musics number of current music list
+hadGet Current CGI had get music numbers
+music0 Music0 name
+music1 Music1 name
+music2 Music2 name
+music3 Music3 name
+music4 Music4 name
+music5 Music5 name
+music6 Music6 name
+music7 Music7 name
+music8 Music8 name
+music9 Music9 name
+music10 Music10 name
+music11 Music11 name
+music12 Music12 name
+music13 Music13 name
+music14 Music14 name
+music15 Music15 name
+music16 Music16 name
+music17 Music17 name
+music18 Music18 name
+music19 Music19 name
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getMusicsNameOfList&name=default &startNo=0
+&musicNum=50 &usr=admin&pwd=
+addMusicList
+Function Add Musics list and music
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=addMusicList&name=1&music0=1.wav
+Param name
+List name
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+89Foscam IPCamera CGI User Guide
+Return
+music0 Music0 name
+music1 Music0 name
+music2 Music0 name
+music3 Music0 name
+music4 Music0 name
+music5 Music0 name
+music6 Music0 name
+music7 Music0 name
+music8 Music0 name
+music9 Music0 name
+setResult 0 Sucess
+1 Fail,music list had alaready
+exist
+2
+Fail,music number had exceed
+max number
+3 Fail,music list had not exist
+4 Cgi param_error
+cnt List number
+curListName Current list name
+list0 List0 name
+list1 List1 name
+list2 List2 name
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=addMusicList&name=1&music0=1.wav&music1=
+&music2=&music3=&music4=&music5=&usr=admin&pwd=
+delMusicList
+Function Delete Musics list and music privilege admin Usage /cgi-bin/CGIProxy.fcgi?cmd=delMusicList&name=1 Param name List name Return delResult 0 Sucess
+1 Fail,music list had
+not exist
+2
+Faild,cgi
+param_error
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+90Foscam IPCamera CGI User Guide
+cnt List number
+curListName Current list name
+list0 List0 name
+list1 List1 name
+list2 List2 name
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=delMusicList&name=1&usr=admin&pwd=
+setMusicPlayMode
+Function Set Musics Play Mode
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=setMusicPlayMode&mode=1
+Param mode
+Return
+1 order
+2 One loop
+3 List loop
+None
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=setMusicPlayMode&mode=1&usr=admin&pwd=
+getMusicPlayMode
+Function Get Musics Play Mode
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getMusicPlayMode
+Param None
+Return mode
+1 order
+2 One loop
+3 List loop
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getMusicPlayMode&usr=admin&pwd=
+setMusicPlayNext
+Function Play Next Music
+privilege admin
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+91Foscam IPCamera CGI User Guide
+Usage /cgi-bin/CGIProxy.fcgi?cmd=setMusicPlayNext
+Param None
+Return None
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=setMusicPlayNext&usr=admin&pwd=
+setMusicPlayPre
+Function Play Precede Music
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=setMusicPlayPre
+Param None
+Return None
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=setMusicPlayPre&usr=admin&pwd=
+getMusicPlayState
+Function Get Music Play State
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getMusicPlayState
+Param None
+Return retResult
+0 Success
+-1 Faild
+cnt Music total number mode 1 order
+2 One loop
+3 List loop
+index Music number index state 0 stop
+1 playing
+name
+List name
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getMusicPlayState&usr=admin&pwd=
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+92Foscam IPCamera CGI User Guide
+setMusicPlayStart
+Function Start Play Music
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=setMusicPlayStart
+Param mode
+Return
+1 order
+2 One loop
+3 List loop
+index Music number index
+name List name
+None
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=setMusicPlayStart& mode=1&index=0&name=defa
+ult &usr=admin&pwd=
+setMusicPlayStop
+Function Stop Play Music
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=setMusicPlayStop
+Param None
+Return None
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=setMusicPlayStop&usr=admin&pwd=
+setMusicDormantTime
+Function Set Music Dormant Time
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=setMusicDormantTime
+Param minutes
+Return
+-1 Not dormant
+10 10 minutes
+20 20 minutes
+30 30 minutes
+None
+Note
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+93Foscam IPCamera CGI User Guide
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=setMusicDormantTime& minutes=10 &usr=admin&
+pwd=
+getMusicDormantTime
+Function Get Music Dormant Time
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getMusicDormantTime
+Param None
+Return minutes
+-1 Not dormant
+10 10 minutes
+20 20 minutes
+30 30 minutes
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getMusicDormantTime&usr=admin&pwd=
+Cloud
+getCloudConfig
+Function Get Cloud Config
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getCloudConfig
+Param None
+Return isEnable
+0 disable
+1 enable
+statusMsg Status msg from server
+cloudServer 1 Dropbox
+2 Baidu
+authAddr Authorization addr to server
+code Authorization code from server
+accessToken Access Token from Authorization code
+quota Cloud storage total size
+userd Cloud storage userd size
+Note
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+94Foscam IPCamera CGI User Guide
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getCloudConfig&usr=admin&pwd=
+setCloudConfig
+Function Set Cloud Config
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=setCloudConfig
+Param isEnable
+cloudServer
+code
+Return
+0 disable
+1 enable
+1 Dropbox
+2 Baidu
+Authorization code from server
+None
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=setCloudConfig& isEnable=1&cloudServer=2&code
+=dfasdfdfadf &usr=admin&pwd=
+selectCloudServer
+Function Select Cloud Server
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=selectCloudServer
+Param isEnable
+cloudServer
+Return
+0 disable
+1 enable
+1 Dropbox
+2 Baidu
+None
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=selectCloudServer& isEnable=1&cloudServer=2 &u
+sr=admin&pwd=
+getCloudToken
+Function Get Cloud Token
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getCloudToken
+Param isEnable
+0
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+disable
+95Foscam IPCamera CGI User Guide
+cloudServer
+code
+1 enable
+1 Dropbox
+2 Baidu
+Authorization code from server
+Return None
+Note Call this cgi, then call getCloudConfig 10s later, find accessToken
+Example /cgi-bin/CGIProxy.fcgi?cmd=getCloudToken& isEnable=1&cloudServer=2&code
+=dfasdfdfadf &usr=admin&pwd=
+getCloudQuota
+Function Get Cloud Quota
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getCloudQuota
+Param isEnable
+cloudServer
+0 disable
+1 enable
+1 Dropbox
+2 Baidu
+Return None
+Note Call this cgi, then call getCloudConfig 10s later, find quota and userd
+Example /cgi-bin/CGIProxy.fcgi?cmd=getCloudQuota& isEnable=1&cloudServer=2&code
+=dfasdfdfadf &usr=admin&pwd=
+testCloudServer
+Function Get Cloud Quota
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=testCloudServer
+Param isEnable
+cloudServer
+0 disable
+1 enable
+1 Dropbox
+2 Baidu
+Return None
+Note Call this cgi, then call getCloudConfig 10s later, find statueMsg
+Example /cgi-bin/CGIProxy.fcgi?cmd=testCloudServer& isEnable=1&cloudServer=2&cod
+e=dfasdfdfadf &usr=admin&pwd=
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+96Foscam IPCamera CGI User Guide
+getPushConfig
+Function Get Push Config
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getPushConfig
+Param None
+Return isEnable
+0 disable
+1 enable
+pushServer 1 Baidu
+statusMsg Status message from server
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getPushConfig&usr=admin&pwd=
+setPushConfig
+Function Set Push Config
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=setPushConfig
+Param isEnable
+pushServer
+Return
+0 disable
+1 enable
+1 Baidu
+None
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=setPushConfig& isEnable=1 & pushServer=1& usr=a
+dmin&pwd=
+testPushServer
+Function Test Push Server
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=testPushServer
+Param isEnable
+pushServer
+0 disable
+1 enable
+1 Baidu
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+97Foscam IPCamera CGI User Guide
+Return None
+Note Call this cgi, then call getPushConfig 10s later
+Example /cgi-bin/CGIProxy.fcgi?cmd=testPushServer& isEnable=1 & pushServer=1& usr=
+admin&pwd=
+pushOperate
+Function Test Push pushOperate
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=pushOperate
+Param cmd_oper
+device_type
+Return
+1 Register App device
+2 unRegister App device
+3 Test device
+4 Register tag
+5 Push msg to single app device
+6 Push msg to tag
+1 Web browers
+2 pc
+3 android
+4 ios
+5 Windows phone
+channel_id App get it from server
+user_id App get it from server
+None
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=pushOperate & usr=admin&pwd=
+SetOnlineUpgrade
+Function Online upgrade
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=SetOnlineUpgrade
+Param update_type
+1 Upgrade now
+2 Upgrade by time
+url Coding Firmware address
+cycle Update cycle
+Copyright@ Shenzhen Foscam Intelligent Technology Limited
+98Foscam IPCamera CGI User Guide
+Return
+None
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=SetOnlineUpgrade&update_type=1&url=http://bcs
+.duapp.com/foscam/FosBaby_B_app_ver2.x.1.11.bin&cycle=0&usr=admin&p
+wd=
+setCloudStreamLevel
+Function Set cloud stream level
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=setCloudStreamLevel
+level
+Return
+1~100
+None
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=setCloudStreamLevel&level=30usr=admin&pwd=
+getCloudStreamLevel
+Function Get cloud stream level
+privilege admin
+Usage /cgi-bin/CGIProxy.fcgi?cmd=getCloudStreamLevel
+Param None
+Return level
+1~100
+Note
+Example
+/cgi-bin/CGIProxy.fcgi?cmd=getCloudStreamLevel&usr=admin&pwd=
