@@ -567,7 +567,7 @@ if __name__ == '__main__':
     commandJson["ptzAddPresetPoint"]["ExampleParams"] = {
         "name": "1",
     } # incorrectly parsed from the pdf for some reason
-    commandJson["ptzAddPresetPoint"]["Function"] += ". The preset point position will be the current PT position. Third-party applications usually use simply numbers (e.g. 1 or 5) as the names."
+    commandJson["ptzAddPresetPoint"]["Function"] += ". The preset point position will be the current PT position. Third-party applications usually use simply numbers (e.g. 1 or 5) as the names. If a preset with the given name already exists, you may have to delete it first (see ptzDeletePresetPoint)."
     
     commandJson["setPTZSelfTestMode"]["paramOptions"] = {
         "mode" : {
@@ -579,6 +579,7 @@ if __name__ == '__main__':
             }
         }
     }
+    commandJson["ptzDeletePresetPoint"]["Function"] += ". If the preset is defined as the preset to go to after boot, you may have to change that definition to something else first (see setPTZPrePointForSelfTest)."
     
     commandJson["setPTZPrePointForSelfTest"]["Function"] += ". This setting defines the position of PTZ after the camera boots. Set the preset name with this, and enable mode 2 with 'setPTZSelfTestMode'."
     commandJson["setPTZPrePointForSelfTest"]["ExampleParams"] = {
@@ -629,6 +630,25 @@ if __name__ == '__main__':
     
     commandJson["importConfig"] = commandJson["ImportConfig"] # which one is correct?
     commandJson["fwUpgrade"] = commandJson["FwUpgrade"] # which one is correct?
+    
+    commandJson["focusNear"] = {    # missing from PDF
+        "ExampleParams": None,
+        "Function": "Focus near.",
+        "Privilege": "operator",
+        "paramOptions": None
+    }
+    commandJson["focusFar"] = {    # missing from PDF
+        "ExampleParams": None,
+        "Function": "Focus far.",
+        "Privilege": "operator",
+        "paramOptions": None
+    }
+    commandJson["focusStop"] = {    # missing from PDF
+        "ExampleParams": None,
+        "Function": "Stop the focusing motor.",
+        "Privilege": "operator",
+        "paramOptions": None
+    }
     
     #                                                       #
     #########################################################

@@ -6,10 +6,10 @@ For example:
 - Set motion detection area and schedule
 - Get a still image from camera
 - Turn infrared off/on
+- Operate PTZ+focus in a pinch
 
 This tool does not
-- Operate PTZ in real time, or at least not properly.
-- Show video from camera. At most this could parse the RTSP link to open in another program.
+- show video from camera, but only parses the RTSP links to open in another program. Without the video stream, operating PTZ is possible but clumsy.
 
 ## How to use
 Download the `index.html` and open it (with a browser). In practice that can be done at least by 'saving as' [the raw view of the index.html](https://raw.githubusercontent.com/hyttysmyrkky/foscam_cgi_api_html/main/index.html). Please read the "Security notes" below. Further instructions are on the tool itself.

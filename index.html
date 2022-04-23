@@ -80,6 +80,10 @@
         a:hover, a:active {
             color: white;
         }
+        img.operate {
+            max-width: 100vw;
+            max-height: 60vh;
+        }
 
     </style>
 </head>
@@ -401,6 +405,59 @@
     
     <div id="Operate" style="display: none;">
         <hr><h2>Operate</h2>
+        <div>
+            <button onclick="getStillImage()" id="operateViewSnapshotButton">Get/Refresh still image (also by clicking the image)</button>
+            <br>
+            <img onclick="getStillImage()" class="operate" id="operateViewSnapshot" src=""/>
+            <br>
+            <button onmousedown="ptz('ptzMoveUp')" onmouseup="ptz('ptzStopRun')">^^^^^ Up ^^^^^</button>
+            <br>
+            <button onmousedown="ptz('ptzMoveLeft')" onmouseup="ptz('ptzStopRun')">&lt; Left &lt;</button>
+            <button onmousedown="ptz('ptzMoveRight')" onmouseup="ptz('ptzStopRun')">&gt; Right&gt;</button>
+            <button onmousedown="ptz('zoomIn')" onmouseup="ptz('zoomStop')">+ Zoom in </button>
+            <button onmousedown="ptz('focusFar')" onmouseup="ptz('focusStop')">Focus far</button>
+            <button onclick="ptz('openInfraLed')">IR on</button>
+            <button onclick="ptz('setInfraLedConfig', {'mode':'0'})">IR auto</button>
+            <button onclick="ptz('closeInfraLed')">IR off</button>
+            <p style="display:inline">Sent cmd:</p>
+            <p id="ptzShowSentCmd" style="display:inline"></p>
+            <br>
+            <button onmousedown="ptz('ptzMoveDown')" onmouseup="ptz('ptzStopRun')">vvvv Down vvvv</button>
+            <button onmousedown="ptz('zoomOut')" onmouseup="ptz('zoomStop')">- Zoom out</button>
+            <button onmousedown="ptz('focusNear')" onmouseup="ptz('focusStop')">Focus near</button>
+            <label for="gotoPreset1">Presets:</label>
+            <button onclick="ptz('ptzGotoPresetPoint', {'name':'1'})" id="gotoPreset1">1</button>
+            <button onclick="ptz('ptzGotoPresetPoint', {'name':'2'})">2</button>
+            <button onclick="ptz('ptzGotoPresetPoint', {'name':'3'})">3</button>
+            <button onclick="ptz('ptzGotoPresetPoint', {'name':'4'})">4</button>
+            <button onclick="ptz('ptzGotoPresetPoint', {'name':'5'})">5</button>
+            <button onclick="ptz('ptzGotoPresetPoint', {'name':'6'})">6</button>
+            <button onclick="ptz('ptzGotoPresetPoint', {'name':'7'})">7</button>
+            <button onclick="ptz('ptzGotoPresetPoint', {'name':'8'})">8</button>
+            <button onclick="ptz('ptzGotoPresetPoint', {'name':'9'})">9</button>
+            <button onclick="ptz('ptzGotoPresetPoint', {'name':'0'})">0</button>
+            <label for="addPresetSelected">Set:</label>
+            <select name="addPresetSelected" id="addPresetSelected">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="0">0</option>
+            </select>
+            <button onclick="ptz('ptzAddPresetPoint')">Set</button>
+            <br>
+            <img height="0" width="0" id="operateViewDummyForPtz" src=""/>
+            <br>
+            <label for="rtspMain">Open stream (RTSP):</label>
+            <button onclick="openRtspStream('videoMain')" id="rtspMain">Video, main</button>
+            <button onclick="openRtspStream('videoSub')" id="rtspSub">Video, sub</button>
+            <button onclick="openRtspStream('audio')" id="rtspAudio">Audio</button>
+        </div>
     </div>
     <div id="Custom" style="display: none;">
         <hr><h2>Custom</h2>
@@ -529,7 +586,7 @@
             globals.views.Record.apiCommands = ["getRecordPath", "setRecordPath", "getAlarmRecordConfig", "setAlarmRecordConfig", "getRecordList", "getRecordList2", "getScheduleRecordConfig", "setScheduleRecordConfig", "getMultiDevList", "getMultiDevDetailInfo", "addMultiDev", "delMultiDev", "getDeFrameLevel", "setDeFrameLevel", "getCloudConfig", "setCloudConfig", "selectCloudServer", "getCloudToken", "getCloudQuota", "testCloudServer"];
             globals.views.System.apiCommands = ["exportConfig", "restoreToFactorySetting", "rebootSystem"];
             globals.views.PTZ.apiCommands = ["getPTZSpeed", "setPTZSpeed", "getPTZPresetPointList", "ptzAddPresetPoint", "ptzDeletePresetPoint", "ptzGotoPresetPoint", "getPTZSelfTestMode", "setPTZSelfTestMode", "getPTZPrePointForSelfTest", "setPTZPrePointForSelfTest", "getZoomSpeed", "setZoomSpeed", "ptzGetCruiseMapList", "ptzGetCruiseMapInfo", "ptzSetCruiseMap", "ptzDelCruiseMap", "ptzStartCruise", "ptzStopCruise", "getCruiseTime", "setCruiseTime", "getCruiseTimeCustomed", "setCruiseTimeCustomed", "getCruiseLoopCnt", "setCruiseLoopCnt", "getCruiseCtrlMode", "setCruiseCtrlMode", "getCruisePrePointLingerTime", "setCruisePrePointLingerTime"];
-            globals.views.Operate.apiCommands = ["snapPicture2", "snapPicture", "getInfraLedConfig", "setInfraLedConfig", "openInfraLed", "closeInfraLed", "zoomIn", "zoomOut", "zoomStop", "ptzMoveUp", "ptzMoveDown", "ptzMoveLeft", "ptzMoveRight", "ptzStopRun"];
+            globals.views.Operate.apiCommands = ["snapPicture2", "snapPicture", "getInfraLedConfig", "setInfraLedConfig", "openInfraLed", "closeInfraLed", "zoomIn", "zoomOut", "zoomStop", "ptzMoveUp", "ptzMoveDown", "ptzMoveLeft", "ptzMoveRight", "ptzStopRun", "focusFar", "focusNear", "focusStop"];
         }
         function saveGlobals(){
             localStorage.setItem("globals", JSON.stringify(globals));
@@ -752,7 +809,7 @@
         }
         
         // Generic functions for sending HTTP requests:
-        function getUrl(cmd, params={}, useCamera = null) {
+        function getUrl(cmd, params={}, useCamera = null, withoutPassword = false) {
             if (cmd === null) {
                 throw "No camera selected.";
             }
@@ -771,7 +828,22 @@
                 alert("Select a camera from the dropdown list at the top of the page.");
                 throw "No camera was selected.";
             }
-            return "http://"+currentCamera.ip+":"+currentCamera.port+"/cgi-bin/CGIProxy.fcgi?cmd="+cmd+paramstring+"&usr="+currentCamera.user+"&pwd="+currentCamera.password;
+            if (cmd == "videoMain" || cmd == "videoSub" || cmd == "audio"){
+                if (withoutPassword) {
+                    return "rtsp://"+currentCamera.user+":******@"+currentCamera.ip+":"+currentCamera.port+"/"+cmd;
+                }
+                else {
+                    return "rtsp://"+currentCamera.user+":"+currentCamera.password+"@"+currentCamera.ip+":"+currentCamera.port+"/"+cmd;
+                }
+            }
+            else {
+                if (withoutPassword) {
+                    return "http://"+currentCamera.ip+":"+currentCamera.port+"/cgi-bin/CGIProxy.fcgi?cmd="+cmd+paramstring+"&usr="+currentCamera.user+"&pwd=******";
+                }
+                else {
+                    return "http://"+currentCamera.ip+":"+currentCamera.port+"/cgi-bin/CGIProxy.fcgi?cmd="+cmd+paramstring+"&usr="+currentCamera.user+"&pwd="+currentCamera.password;
+                }
+            }
         }
         function openUrlToNewWindow(url, forceOnlyShowUrl = false){
             if (logDebugLevel || forceOnlyShowUrl || document.getElementById("onlyShowCmdUrlCheckbox").checked) {
@@ -823,7 +895,78 @@
             var url = "http://"+ip+":"+port+"/cgi-bin/CGIProxy.fcgi?cmd=changeUserNameAndPwdTogether&usrName=admin&oldPwd=&usr=admin&pwd=&newUsrName="+user+"&newPwd="+pass;
             openUrlToNewWindow(url);
         }
-
+        
+        // For custom button to open the link to RTSP stream (must open in some external program).
+        function openRtspStream(rtspType){
+            var url = getUrl(rtspType);
+            openUrlToNewWindow(url);
+            showSentCmd.innerHTML = getUrl(rtspType, {}, null, true);
+        }
+        
+        // For custom button to get a still image from the camera and display it on the Operate view
+        function getStillImage() {
+            var imageArea = document.getElementById("operateViewSnapshot");
+            var d=new Date(); // append a dummy date to always reload the image from camera
+            imageArea.src = getUrl("snapPicture2")+"&aa="+d.getTime();
+            showSentCmd.innerHTML = "snapPicture2";
+        }
+        
+        // A hacky way around CORS to send commands to camera (when losing the response does not matter), by setting the dummy image source to the command URL.
+        const dummyImg = document.getElementById("operateViewDummyForPtz");
+        const showSentCmd = document.getElementById("ptzShowSentCmd"); // text field to show the sent cmd (to give some response when a button is clicked and cmd sent)
+        async function sendCmdViaImg(cmd, params={}) {
+            // Append a dummy date to always resend the command (otherwise browser may cache the 'images' and not resend the request)
+            var d = new Date();
+            // Get the URL
+            var url = getUrl(cmd, params)+"&aa="+d.getTime();
+            // "Send":
+            dummyImg.src = url;
+            // Show sent cmd in GUI:
+            showSentCmd.innerHTML = cmd+""+JSON.stringify(params);
+        }
+        
+        // For controlling PTZ and similar, that must send two or more commands in real time without opening a new tab.
+        async function ptz(cmd, params={}) {
+            if (cmd == "closeInfraLed" || cmd == "openInfraLed") {
+                // First set the IR mode to manual:
+                await sendCmdViaImg("setInfraLedConfig", {"mode":"1"});
+                await new Promise(r => setTimeout(r, 1000)); // sleep for a second
+                
+                // Then send the open/close IR command:
+                await sendCmdViaImg(cmd);
+            }
+            else if (cmd == "setInfraLedConfig") {
+                // Set IR to automatic
+                await sendCmdViaImg(cmd, params);
+            }
+            else if (cmd == "ptzAddPresetPoint") {
+                var dropdownvalue = document.getElementById("addPresetSelected").value;
+                params = {"name": dropdownvalue};
+                
+                // Try to first delete the old presetpoint with the same name:
+                await sendCmdViaImg("ptzDeletePresetPoint", params);
+                await new Promise(r => setTimeout(r, 1000));
+                
+                // Then add:
+                await sendCmdViaImg(cmd, params);
+            }
+            else {
+                // All other PTZ/zoom etc methods:
+                await sendCmdViaImg(cmd, params);
+                
+                if (cmd == "ptzStopRun" || cmd == "zoomStop" || cmd == "focusStop") {
+                    // Re-send the request, in case the first was missed due to flaky connection etc
+                    await new Promise(r => setTimeout(r, 100));
+                    await sendCmdViaImg(cmd);
+                }
+            }
+            
+            if (cmd == "ptzStopRun" || cmd == "zoomStop" || cmd == "openInfraLed" || cmd == "closeInfraLed" || cmd == "setInfraLedConfig" || cmd == "focusStop" || cmd == "ptzGotoPresetPoint") {
+                // also refresh the still image after a while:
+                await new Promise(r => setTimeout(r, 1000));
+                getStillImage();
+            }
+        }
 
         // A table of checkboxes for the commands that require some kind of bitmap input (e.g. a schedule or the motion detection area mask).
         class checkboxTable {
@@ -2159,7 +2302,7 @@
             "name": "1"
         },
         "paramOptions": null,
-        "Function": "Add preset point. The preset point position will be the current PT position. Third-party applications usually use simply numbers (e.g. 1 or 5) as the names.",
+        "Function": "Add preset point. The preset point position will be the current PT position. Third-party applications usually use simply numbers (e.g. 1 or 5) as the names. If a preset with the given name already exists, you may have to delete it first (see ptzDeletePresetPoint).",
         "Privilege": "admin"
     },
     "ptzDeletePresetPoint": {
@@ -2167,7 +2310,7 @@
             "name": "test"
         },
         "paramOptions": null,
-        "Function": "Delete preset point by name",
+        "Function": "Delete preset point by name. If the preset is defined as the preset to go to after boot, you may have to change that definition to something else first (see setPTZPrePointForSelfTest).",
         "Privilege": "admin"
     },
     "ptzGotoPresetPoint": {
@@ -3496,6 +3639,24 @@
         "paramOptions": null,
         "Function": "Upgrade firmware. See the Foscam API PDF documentation how this actually works. This button probably does not work.",
         "Privilege": "admin"
+    },
+    "focusNear": {
+        "ExampleParams": null,
+        "Function": "Focus near.",
+        "Privilege": "operator",
+        "paramOptions": null
+    },
+    "focusFar": {
+        "ExampleParams": null,
+        "Function": "Focus far.",
+        "Privilege": "operator",
+        "paramOptions": null
+    },
+    "focusStop": {
+        "ExampleParams": null,
+        "Function": "Stop the focusing motor.",
+        "Privilege": "operator",
+        "paramOptions": null
     }
 }
 
