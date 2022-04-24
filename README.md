@@ -1,18 +1,25 @@
 # foscam_cgi_api_html
 A simple browser-based way to communicate with Foscam CGI API compatible HD IP cameras (incl. for example the Opticam brand).
 
-For example:
+Features:
 - Setup the camera, manage users, wifi settings, IP settings
+- Supports multiple cameras
+- Remembers the configuration and settings
+- Settings can be exported as a json file, and imported
 - Set motion detection area and schedule
 - Get a still image from camera
 - Turn infrared off/on
+- ... and almost everything else that can be done with Foscam CGI API
+- Monitor selected cameras with a fullscreen view displaying snapshots at a chosen interval
 - Operate PTZ+focus in a pinch
+- No ads, no installation, no dependencies or browser plugins. Only a single portable file. Greetings from Finland!
 
 This tool does not
 - show video from camera, but only parses the RTSP links to open in another program. Without the video stream, operating PTZ is possible but clumsy.
+- support non-HD cameras (they use the older version of the API)
 
 ## How to use
-Download the `index.html` and open it (with a browser). In practice that can be done at least by 'saving as' [the raw view of the index.html](https://raw.githubusercontent.com/hyttysmyrkky/foscam_cgi_api_html/main/index.html). Please read the "Security notes" below. Further instructions are on the tool itself.
+Download the `index.html` and open it (with a browser). In practice that can be done at least by 'saving as' [the raw view of the index.html](https://raw.githubusercontent.com/hyttysmyrkky/foscam_cgi_api_html/main/index.html). Please read the "Security notes" below. Further instructions are in the tool itself.
 
 Alternatively, you can [preview the page by using htmlpreview.github.io](https://htmlpreview.github.io/?https://github.com/hyttysmyrkky/foscam_cgi_api_html/blob/main/index.html), but saving the camera address etc. may not work, or if it does, note that any other \*.github.io page can probably read all saved data, including camera credentials as clear-text.
 
