@@ -536,7 +536,7 @@
         <label for="viewerRefreshInterval">Viewer refresh interval (in seconds)</label>
         <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1'); this.value = Math.round(this.value);" id="viewerRefreshInterval"><br>
         <label for="viewerConsecutiveImages">Number of consecutive images from one camera</label>
-        <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1'); this.value = Math.round(this.value);" id="viewerConsecutiveImages"><br>
+        <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1'); this.value = Math.round(this.value);" id="viewerConsecutiveImages"><br><br>
         <button onclick="saveViewerSettings()" id="SaveViewerSetupOptions">Save and apply</button>
     </div>
     <div id="Viewer" class="viewerContainer" style="display: none;">
@@ -1474,8 +1474,13 @@
             constructor(interval_ms = 4000, repeatOneCamera = 3, isEnabled = false) {
                 this.globalStep = 0;                    // Every image refresh increments this.
                 this.enabled = isEnabled;               // Enabled means that the Viewer is active and visible. (All other UI is hidden then.)
+                
+                interval_ms = interval_ms < 100 ? 100 : interval_ms;
                 this.interval_ms = interval_ms;         // Image update interval.
+                
+                repeatOneCamera = repeatOneCamera < 1 ? 1 : repeatOneCamera;
                 this.repeatOneCamera = repeatOneCamera; // How many consecutive images from one camera until change to next camera.
+                
                 this.timerId = null;                    // Id of the timer, to be able to cancel the timer.
                 this.waitForImageToLoad = true;         // Skip an image refresh (download) if the previous image hasn't fully loaded yet.
                 this.imageLoadReady = true;             // A runtime variable to indicate if the image refresh has finished.
