@@ -123,13 +123,25 @@
             max-width: 100vw;
             max-height: 60vh;
         }
-        img.viewer {
-            max-width: 100vw;
-            max-height: 100vh;
-            padding: 0px;
-            position: absolute;
-            left: 0px;
-            top: 0px;
+        @media (min-aspect-ratio: 1/1) {
+            img.viewer {
+                width: 100vw;
+                height: 100vh;
+                padding: 0px;
+                position: absolute;
+                left: 0px;
+                top: 0px;
+            }
+        }
+        @media (max-aspect-ratio: 1/1) {
+            img.viewer {
+                max-width: 100vw;
+                max-height: 100vh;
+                padding: 0px;
+                position: absolute;
+                left: 0px;
+                top: 0px;
+            }
         }
         .viewerContainer {
             border: 0px;
