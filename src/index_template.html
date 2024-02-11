@@ -123,13 +123,25 @@
             max-width: 100vw;
             max-height: 60vh;
         }
-        img.viewer {
-            max-width: 100vw;
-            max-height: 100vh;
-            padding: 0px;
-            position: absolute;
-            left: 0px;
-            top: 0px;
+        @media (min-aspect-ratio: 1/1) {
+            img.viewer {
+                width: 100vw;
+                height: 100vh;
+                padding: 0px;
+                position: absolute;
+                left: 0px;
+                top: 0px;
+            }
+        }
+        @media (max-aspect-ratio: 1/1) {
+            img.viewer {
+                max-width: 100vw;
+                max-height: 100vh;
+                padding: 0px;
+                position: absolute;
+                left: 0px;
+                top: 0px;
+            }
         }
         .viewerContainer {
             border: 0px;
@@ -151,7 +163,7 @@
 
 <body onload="main();" class="zeropadding">
     <div id="headerButtons" class="somepadding">
-        <h1>FOSCAM API (HD cameras only) (requires JavaScript)</h1>
+        <h1>FOSCAM API</h1>
         
         <label>Show/Hide:</label>
         <button onclick="toggleView('Setup')" id="SetupToggle" class="showhide">Add/Remove camera</button>
@@ -184,7 +196,9 @@
             <label for="cameraIp">IP address of the camera: (after connecting the camera, find this e.g. in router settings)</label><br>
             <input type="text" id="cameraIp" name="cameraIp" placeholder="192.168.12.34"><br>
             <label for="cameraPort">Port: (default for Opticam: 88)</label><br>
-            <input type="text" id="cameraPort" name="cameraPort" placeholder="88"><br>
+            <input type="text" id="cameraPort" name="cameraPort" placeholder="88"><br><br>
+            <input type="checkbox" id="cameraIsOldSd" name="cameraIsOldSd">
+            <label for="cameraIsOldSd">The camera is an older SD (usually VGA resolution) camera (uses IP Camera CGI V1.27 API)</label><br><br>
             <label for="cameraName">Name (optional & only for this UI)</label><br>
             <input type="text" id="cameraName" name="cameraName" placeholder=""><br><br>
             <label for="cameraUser">Username: (factory default: admin)</label><br>
@@ -226,7 +240,8 @@
         <hr>
         <div>
             <h2>Help</h2>
-            <p>This user interface for the Foscam API aims to be a portable, simple and easy-to-modify tool to install and manage Foscam API compatible cameras. This html file only requires JavaScript to work, and has no external dependencies. This on the other hand means quite a raw and clumsy user experience.</p>
+            <p>This user interface for the Foscam API aims to be a portable, simple and easy-to-modify tool to install and manage Foscam API compatible cameras. Older SD/VGA cameras (IP Camera CGI V1.27) are not yet fully supported, and all the documentation etc. are for HD cameras (Foscam IPCamera CGI > 1.0.16).</p>
+            <p>This html file only requires JavaScript to work, and has no external dependencies. This on the other hand means quite a raw and clumsy user experience.</p>
             <p>Commands are sent to the camera by opening the parsed URL as a new tab. The camera returns a response as an XML which you can see on the new tab. Therefore, some popups must be allowed, and also it makes it impossible to automatically process the response, unfortunately.</p>
             <p>If you want to only see the parsed URL and not send the command when clicking the buttons with blue text, select the "Only show command URL" checkbox". On Linux you can turn the URL into a curl command with this syntax:</p>
             <pre>curl 'PasteFullUrlHere'</pre>
@@ -616,12 +631,13 @@
             }
         }
         class Camera {
-            constructor(ip, user, password, cameraName = "", port = 88) {
+            constructor(ip, user, password, cameraName = "", port = 88, isOldSdCamera = false) {
                 this.ip = ip;
                 this.port = port;
                 this.user = user;
                 this.password = password;
                 this.cameraName = cameraName;
+                this.isOldSdCamera = isOldSdCamera; // old standard definition cameras use a different API (IP Camera CGI V1.27)
                 
                 this.keyName = ip+":"+port+" ("+user+") "+ cameraName;
                 
@@ -952,6 +968,7 @@
             if (!port) {
                 port = "88";
             }
+            var isOlderSdCamera = document.getElementById("cameraIsOldSd").checked;
             var name = document.getElementById("cameraName").value;
             if (!name) {
                 name = "";
@@ -964,7 +981,7 @@
                 throw "IP or user name was empty.";
             }
             
-            var newCamera = new Camera(ip, user, pass, name, port);
+            var newCamera = new Camera(ip, user, pass, name, port, isOlderSdCamera);
 
             globals.setup.cameras[newCamera.keyName] = newCamera;
             logDebug("Saved new camera. Now cameras:");
@@ -1033,20 +1050,39 @@
                 alert("Select a camera from the dropdown list at the top of the page.");
                 throw "No camera was selected.";
             }
-            if (cmd == "videoMain" || cmd == "videoSub" || cmd == "audio"){
-                if (withoutPassword) {
-                    return "rtsp://"+currentCamera.user+":******@"+currentCamera.ip+":"+currentCamera.port+"/"+cmd;
+            if (currentCamera.isOldSdCamera){
+                var translatedCmd = hdToSdCommandMap[cmd] ?? null;
+
+                if (translatedCmd == null){
+                    var sdNotImplementedMsg = `Command ${cmd} not implemented yet for SD cameras.`;
+                    alert(sdNotImplementedMsg);
+                    throw sdNotImplementedMsg;
                 }
                 else {
-                    return "rtsp://"+currentCamera.user+":"+currentCamera.password+"@"+currentCamera.ip+":"+currentCamera.port+"/"+cmd;
+                    if (withoutPassword) {
+                        return "http://"+currentCamera.ip+":"+currentCamera.port+"/"+translatedCmd+".cgi?"+paramstring+"&user="+currentCamera.user+"&pwd=*******";
+                    }
+                    else {
+                        return "http://"+currentCamera.ip+":"+currentCamera.port+"/"+translatedCmd+".cgi?"+paramstring+"&user="+currentCamera.user+"&pwd="+currentCamera.password;
+                    }
                 }
             }
             else {
-                if (withoutPassword) {
-                    return "http://"+currentCamera.ip+":"+currentCamera.port+"/cgi-bin/CGIProxy.fcgi?cmd="+cmd+paramstring+"&usr="+currentCamera.user+"&pwd=******";
+                if (cmd == "videoMain" || cmd == "videoSub" || cmd == "audio"){
+                    if (withoutPassword) {
+                        return "rtsp://"+currentCamera.user+":******@"+currentCamera.ip+":"+currentCamera.port+"/"+cmd;
+                    }
+                    else {
+                        return "rtsp://"+currentCamera.user+":"+currentCamera.password+"@"+currentCamera.ip+":"+currentCamera.port+"/"+cmd;
+                    }
                 }
                 else {
-                    return "http://"+currentCamera.ip+":"+currentCamera.port+"/cgi-bin/CGIProxy.fcgi?cmd="+cmd+paramstring+"&usr="+currentCamera.user+"&pwd="+currentCamera.password;
+                    if (withoutPassword) {
+                        return "http://"+currentCamera.ip+":"+currentCamera.port+"/cgi-bin/CGIProxy.fcgi?cmd="+cmd+paramstring+"&usr="+currentCamera.user+"&pwd=******";
+                    }
+                    else {
+                        return "http://"+currentCamera.ip+":"+currentCamera.port+"/cgi-bin/CGIProxy.fcgi?cmd="+cmd+paramstring+"&usr="+currentCamera.user+"&pwd="+currentCamera.password;
+                    }
                 }
             }
         }
@@ -1683,6 +1719,11 @@
             }
         }
         
+        // The command map from Foscam HD camera to SD camera: Try to support SD cameras by translating the command.
+        let hdToSdCommandMap = {
+            "snapPicture2" : "snapshot"
+            // TODO: Add more mappings. Any commands that do not use parameters, are probably easy to add.
+        }
         
         let commandJson = 
 {COMMANDJSON_PLACEHOLDER}
