@@ -23,6 +23,17 @@ Download the `index.html` and open it (with a browser). In practice that can be 
 
 Alternatively, you can [preview the page by using htmlpreview.github.io](https://htmlpreview.github.io/?https://github.com/hyttysmyrkky/foscam_cgi_api_html/blob/main/index.html), but saving the camera address etc. may not work, or if it does, note that any other \*.github.io page can probably read all saved data, including camera credentials as clear-text.
 
+### **NOTE 2024-10**
+If you are loading the `index.html` from a local hard drive, or from the Github preview or some other HTTPS source, you may have to manually allow [mixed content](https://developer.mozilla.org/en-US/docs/Web/Security/Mixed_content) (e.g. images over HTTP on an HTML page loaded from a local hard drive or HTTPS) in your browser settings. For example by default [Firefox no longer supports mixed content since June 2024](https://blog.mozilla.org/security/2024/06/05/firefox-will-upgrade-more-mixed-content-in-version-127/).
+
+Especially the Operate and Viewer views require images usually over HTTP.
+
+To allow mixed content images in Firefox, open `about:config` and search and set `security.mixed_content.upgrade_display_content.image` to false. This way Firefox no longer forces images to be fetched via HTTPS which the IP cameras don't support.
+
+Other ways to make this tool work properly are:
+- Host the index.html over HTTP. For example if you have Python installed, run in the directory where you downloaded the index.html, `python3 -m http.server --bind 127.0.0.1 8000` and then open in the browser `http://127.0.0.1:8000`.
+- Alternatively, setup a reverse proxy so that the commands can be sent to cameras over HTTPS. Then the reverse proxy will handle the SSL termination. However, even if this is probably the "correct" way to manage the cameras, and you end up having the data encrypted multiple times, this is often unnecessarily complicated.
+
 ## Security notes
 - Data is saved to localStorage only on the browser you are using.
 - Requests to cameras use unencrypted HTTP and the credentials are clear-text and show up in the browser page history.
